@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <style>
+      .hero {
+        background-image: url("./public/images/flags.png"); /* replace with actual background image */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: left;
+        padding: 160px 0;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      .section-padding {
+        padding: 60px 0;
+      }
+      .flags img {
+        max-width: 100px;
+      }
+      .footer {
+        background-color: #f8f9fa;
+        padding: 40px 0;
+      }
+
+      .btn-link {
+        color: black !important;
+      }
+
+      .nav-item > a{
+        color:white !important; 
+        margin-right: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #f9f8f8;" class="full-height">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1d608f;">
+      <img
+        src="./public/images/eac-logo.png"
+        alt="EAC Logo"
+        height="50"
+        class="logo" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active" style="color:white !important;">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item" style="color:white !important;">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <!-- <div class="container d-flex align-items-center justify-content-center mt-4 mb-4" style="background-color: red;">
+      <div class="row justify-content-center">
+        
+    </div>
+  </div> -->
+  
+    <div class="container d-flex align-items-center justify-content-center" style="height: 33rem;">
+        <div class="col-md-5">
+            <form style="color: #808080 !important">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control rounded-0" id="email" />
+              </div>
+  
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control rounded-0"
+                  id="password"
+                   />
+              </div>
+              
+              <div class="d-flex justify-content-center">
+                <button
+                  type="button"
+                  onclick="window.location.href='profile.html'"
+                  class="btn btn-primary btn-block mt-4 col-6 rounded-0 border-0" style="background-color: #1d608f;">
+                  Login
+                </button>
+                </div>
+            </form>
+          </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer position-fixed w-100" style="background-color: #1d608f;bottom:0;">
+      <div class="container" style="color: white">
+        <div class="row justify-content-between">
+          <div class="col-md-3">
+            <h5>East African Community</h5>
+            <p>
+              P.O.Box 1096<br />Arusha, Tanzania<br />EAC Close Africa Mashariki
+              Road
+            </p>
+          </div>
+
+          <div class="col-md-3" id="contacts">
+            <h5>Contacts</h5>
+            <p>
+              eac@eachq.org<br />+255 (0)27 216 2100<br />+255 (0)27 216 2190
+            </p>
+          </div>
+      
+          <div class="col-md-3">
+            <br>
+            <img alt="image" src="./public/images/eac-logo.png" style="width:90px !important; height:70px !important;"/>
+            <img alt="image" src="./public/images/giz-logo.png" style="width:160px !important;height:50px !important;" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

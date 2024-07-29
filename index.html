@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>East African Community Mutual Recognition Portal</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <style>
+      .hero {
+        background-image: url("./public/images/flags.png"); /* replace with actual background image */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: left;
+        padding: 160px 0;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      .section-padding {
+        padding: 60px 0;
+      }
+      .flags img {
+        max-width: 100px;
+      }
+      .footer {
+        background-color: #f8f9fa;
+        padding: 40px 0;
+      }
+
+      .btn-link {
+        color: black !important;
+      }
+
+      a{
+        color:white !important; 
+        margin-right: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #f9f8f8">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1d608f;">
+      <img
+        src="./public/images/eac-logo.png"
+        alt="EAC Logo"
+        height="50"
+        class="logo" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active" style="color:white !important;">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item" style="color:white !important;">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Registration</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+      class="hero"
+      style="
+        position: relative;
+        background-image: url('./public/images/flags.png');
+        background-blend-mode: overlay;
+        background-color: rgba(0, 0, 0, 0.7);
+      ">
+      <div class="ml-4 col-12 d-none d-md-block">
+        <span style="font-size: 2.5rem;font-weight:500;">East African Community</span><br />
+        <span style="font-size: 3rem;font-weight:500;">Mutual Recognition Portal</span>
+      </div>
+
+      <div class="col-12 d-block d-md-none">
+        <span style="font-size: 1.7rem;font-weight:500;">East African Community</span><br />
+        <span style="font-size: 1.8rem;font-weight:500;">Mutual Recognition Portal</span>
+      </div>
+    </div>
+
+    <div
+      class="row justify-content-around align-items-center text-white d-none d-md-flex"
+      style="width: 95rem; height:4rem; background-color: #1d608f">
+      <span style="font-size: 1.1rem">KENYA</span>
+      <span style="font-size: 1.1rem">RWANDA</span>
+      <span style="font-size: 1.1rem">SOUTH SUDAN</span>
+      <span style="font-size: 1.1rem">UGANDA</span>
+      <span style="font-size: 1.1rem">TANZANIA</span>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container section-padding p-3">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h2 class="d-none d-md-block">
+            About the EAC <br />
+            Mutual Recognition Portal
+            <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
+          </h2>
+
+          <h2 class="d-block d-md-none" style="font-size: 1.6rem;">
+            About the EAC <br />
+            Mutual Recognition Portal
+            <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
+          </h2>
+
+          <p class="w-md-75">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          
+          <p class="w-md-75">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <img
+            src="./public/images/eac-building.png"
+            alt="EAC Building"
+            class="img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faq" class="container section-padding bg-white p-4 mb-4">
+      <h2>
+        FAQ
+        <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
+      </h2>
+      <br>
+      <div class="accordion" id="faqAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne">
+                Duis aute irure dolor ?
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#faqAccordion">
+            <div class="card-body">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo">
+                Duis aute irure dolor ?
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#faqAccordion">
+            <div class="card-body">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree">
+                Duis aute irure dolor ?
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#faqAccordion">
+            <div class="card-body">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 1rem"></div>
+
+    <hr class="mx-4" style="background-color: #1d608f;height:1px;" />
+
+    <div
+      class="col row justify-content-around align-items-center"
+      style="height: 12rem">
+      <img
+        src="./public/images/erb-kenya.png"
+        class="mr-0 logo"
+        height="80"
+      />
+
+      <img
+        src="./public/images/erb-rwanda.png"
+        class="mr-4 logo"
+        height="80"/>
+
+      <img
+        src="./public/images/erb-sudan.png"
+        class="mr-4 logo"
+        height="80"
+      />
+
+      <img
+        src="./public/images/erb-tz.png"
+        class="mr-4 logo"
+        alt="EAC Logo"
+        height="72"
+      />
+
+      <img
+        src="./public/images/erb-ug.png"
+        class="mr-4 logo"
+        alt="EAC Logo"
+        height="72"
+      />
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer fixed" style="background-color: #1d608f">
+      <div class="container" style="color: white">
+        <div class="row justify-content-between">
+          <div class="col-md-3">
+            <h5>East African Community</h5>
+            <p>
+              P.O.Box 1096<br />Arusha, Tanzania<br />EAC Close Africa Mashariki
+              Road
+            </p>
+          </div>
+
+          <div class="col-md-3" id="contacts">
+            <h5>Contacts</h5>
+            <p>
+              eac@eachq.org<br />+255 (0)27 216 2100<br />+255 (0)27 216 2190
+            </p>
+          </div>
+      
+          <div class="col-md-3">
+            <br>
+            <img alt="image" src="./public/images/eac-logo.png" style="width:90px !important; height:70px !important;"/>
+            <img alt="image" src="./public/images/giz-logo.png" style="width:160px !important;height:50px !important;" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
