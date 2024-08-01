@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>East African Community Mutual Recognition Portal</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet" />
+    
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/animate.css" rel="stylesheet">
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 
     <style>
       .hero {
-        background-image: url("./public/images/flags.png"); /* replace with actual background image */
+        background-image: url("./public/images/flags.png"); 
         background-size: cover;
         background-position: center;
         color: white;
@@ -29,7 +34,7 @@
       }
       .footer {
         background-color: #f8f9fa;
-        padding: 40px 0;
+        padding: 20px 0;
       }
 
       .btn-link {
@@ -52,7 +57,7 @@
         height="50"
         class="logo" />
       <button
-        class="navbar-toggler"
+        class="navbar-toggler bg-transparent"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -118,33 +123,21 @@
 
     <!-- About Section -->
     <br>
-    <div id="about" class="container section-padding p-3">
-      <div class="row align-items-center w-100">
+    <div id="about" class="container section-padding p-3 text-dark">
+      <div class="row justify-content-center align-items-center w-100">
         <div class="col-md-8">
-          <h2 class="d-none d-md-block">
-            About the EAC <br />
-            Mutual Recognition Portal
-            <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
-          </h2>
-
-          <h2 class="d-block d-md-none" style="font-size: 1.6rem;">
+          <h2 class="text-dark mb-4" style="font-weight: 500;">
             About the EAC <br />
             Mutual Recognition Portal
             <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
           </h2>
 
           <p class="w-md-75">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            The East African Community (EAC) is committed to enabling the free movement of labor within its Partner States by harmonizing and mutually recognizing academic and professional qualifications. However, despite the existence of the Mutual Recognition Agreement (MRA) for engineers, professionals frequently encounter obstacles when trying to have their licenses acknowledged across borders. The primary issue is the absence of a systematic process for the exchange of information between the Competent Authorities (CAs) responsible for issuing and recognizing professional licenses.
           </p>
           
           <p class="w-md-75">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            This deficiency creates significant challenges and delays in the issuance of mutual recognition credentials, making it difficult for engineers to practice in different EAC Partner States. The EAC Secretariat's innovative digital tool aims to address these challenges by enhancing the recognition and mobility of professional engineers throughout the region. This initiative is a crucial step towards achieving greater regional integration and cooperation among the Partner States.
           </p>
         </div>
 
@@ -159,15 +152,15 @@
 
     <!-- FAQ Section -->
     <div id="faq" class="container section-padding bg-white p-4 mb-4">
-      <h2>
+      <h2 class="text-dark" style="font-weight: 500;">
         FAQ
-        <hr style="background-color: #1d608f; height: 4px; width: 80px; margin: 0; align-self: flex-start;" />
+        <hr style="background-color: #1d608f; height: 4px; width: 35px; margin: 0; align-self: flex-start;" />
       </h2>
       <br>
       <div class="accordion" id="faqAccordion">
         <div class="card">
           <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
               <button
                 class="btn btn-link"
                 type="button"
@@ -177,64 +170,64 @@
                 aria-controls="collapseOne">
                 Duis aute irure dolor ?
               </button>
-            </h2>
+            </h3>
           </div>
           <div
             id="collapseOne"
             class="collapse show"
             aria-labelledby="headingOne"
             data-parent="#faqAccordion">
-            <div class="card-body">
+            <div class="card-body" style="color:black;">
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur.
             </div>
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
+          <div class="card-header">
+            <h3 class="mb-0">
               <button
-                class="btn btn-link collapsed"
+                class="btn btn-link"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseTwo"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls="collapseTwo">
                 Duis aute irure dolor ?
               </button>
-            </h2>
+            </h3>
           </div>
           <div
             id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
+            class="collapse show"
+            aria-labelledby="headingOne"
             data-parent="#faqAccordion">
-            <div class="card-body">
+            <div class="card-body" style="color:black;">
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur.
             </div>
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
+          <div class="card-header">
+            <h3 class="mb-0">
               <button
-                class="btn btn-link collapsed"
+                class="btn btn-link"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseThree"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls="collapseThree">
                 Duis aute irure dolor ?
               </button>
-            </h2>
+            </h3>
           </div>
           <div
             id="collapseThree"
-            class="collapse"
-            aria-labelledby="headingThree"
+            class="collapse show"
+            aria-labelledby="headingOne"
             data-parent="#faqAccordion">
-            <div class="card-body">
+            <div class="card-body" style="color:black;">
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur.
             </div>
@@ -247,9 +240,7 @@
 
     <hr class="mx-4 d-none d-md-flex" style="background-color: #1d608f;height:1px;" />
 
-    <div
-      class="d-none d-md-flex justify-content-around align-items-center"
-      style="height: 12rem">
+    <div class="d-none d-md-flex justify-content-around align-items-center pb-4">
       <img
         src="./public/images/erb-kenya.png"
         class="mr-0 logo"
@@ -283,7 +274,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer fixed" style="background-color: #1d608f">
+    <footer class="p-3" style="background-color: #1d608f">
       <div class="container-fluid" style="color: white">
         <div class="row justify-content-around">
           <div class="col-md-3">
@@ -309,9 +300,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

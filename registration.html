@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/animate.css" rel="stylesheet">
+    
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    
     <style>
       .hero {
-        background-image: url("./public/images/flags.png"); /* replace with actual background image */
+        background-image: url("./public/images/flags.png"); 
         background-size: cover;
         background-position: center;
         color: white;
@@ -28,7 +34,6 @@
       }
       .footer {
         background-color: #f8f9fa;
-        padding: 40px 0;
       }
 
       .btn-link {
@@ -39,11 +44,15 @@
         color:white !important; 
         margin-right: 1.5rem;
       }
+
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
     </style>
   </head>
-
-  <body style="background-color: #f9f8f8">
-    <!-- Navigation -->
+  <body style="background-color: #f9f8f8;overflow:auto;">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1d608f;">
       <img
         src="./public/images/eac-logo.png"
@@ -51,7 +60,7 @@
         height="50"
         class="logo" />
       <button
-        class="navbar-toggler"
+        class="navbar-toggler bg-transparent"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -60,8 +69,9 @@
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" style="display: flex !important;">
           <li class="nav-item active" style="color:white !important;">
             <a class="nav-link" href="index.html">Home</a>
           </li>
@@ -83,109 +93,105 @@
         </ul>
       </div>
     </nav>
+    
+    <div class="container d-flex justify-content-center align-items-center h-75">
+      <div class="col-md-7">
+        <!-- <h2 style="font-weight:500;">Registration</h2><br> -->
+        <form class="row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control rounded-0" id="firstName" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control rounded-0" id="lastName" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control rounded-0" id="email" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="competent-authority"
+              >Home Competent Authority</label
+            >
+            <select class="form-control rounded-0" id="competent-authority">
+              <option value=""></option>
+              <option value="kenya">Kenya</option>
+              <option value="rwanda">Rwanda</option>
+              <option value="south-sudan">South Sudan</option>
+              <option value="uganda">Uganda</option>
+              <option value="tanzania">Tanzania</option>
+            </select>
+          </div>
 
-  <div class="container mt-4 mb-4">
-      <div class="row justify-content-center">
-        <div class="col-md-5">
-          <form style="color: #808080 !important">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" class="form-control rounded-0" id="firstName" />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control rounded-0" id="lastName" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control rounded-0" id="email" />
-            </div>
-            <div class="form-group">
-              <label for="competent-authority"
-                >Home Competent Authority</label
-              >
-              <select class="form-control rounded-0" id="competent-authority">
-                <option value=""></option>
-                <option value="kenya">Kenya</option>
-                <option value="rwanda">Rwanda</option>
-                <option value="south-sudan">South Sudan</option>
-                <option value="uganda">Uganda</option>
-                <option value="tanzania">Tanzania</option>
-              </select>
-            </div>
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control rounded-0"
+              id="password"
+               />
+          </div>
 
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input
-                type="password"
-                class="form-control rounded-0"
-                id="password"
-                 />
-            </div>
+          <div class="form-group col-md-6">
+            <label for="password">Confirm Password</label>
+            <input
+              type="confirm_password"
+              class="form-control rounded-0"
+              id="confirm_password"
+               />
+          </div>
 
-            <div class="form-group">
-              <label for="password">Confirm Password</label>
-              <input
-                type="confirm_password"
-                class="form-control rounded-0"
-                id="confirm_password"
-                 />
-            </div>
-
-            <div class="form-check">
+          <div class="form-check">
+            <div class="col-md-12">
               <input
                 type="checkbox"
                 class="form-check-input"
                 id="terms" /> 
               <label class="form-check-label" for="terms"
                 >I agree to the
-                <a href="#" style="font-size: 16px"
-                  >Terms & privacy</a
+                <a href="#" style="font-size: 14px"
+                  >Terms & Privacy</a
                 ></label
               >
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center mt-4">
-                <button type="button" class="btn btn-primary btn-block mt-3 col-6 rounded-0 border-0" style="background-color: #1d608f;" onclick="window.location.href='account-activation.html'">
-                  Register
-                </button>
-
-                <span class="mt-3">Already a member ? <a href="login.html">Login</a></span>
-            </div>
-          </form>
-        </div>
-    </div>
-  </div>
-
-  <div style="height: 1rem"></div>
-
-  <footer class="footer fixed" style="background-color: #1d608f">
-    <div class="container-fluid" style="color: white">
-      <div class="row justify-content-around">
-        <div class="col-md-3">
-          <h5>East African Community</h5>
-          <p>
-            P.O.Box 1096<br />Arusha, Tanzania<br />EAC Close Africa Mashariki
-            Road
-          </p>
-        </div>
-        <div class="col-md-3" id="contacts">
-          <h5>Contacts</h5>
-          <p>
-            eac@eachq.org<br />+255 (0)27 216 2100<br />+255 (0)27 216 2190
-          </p>
-        </div>
-    
-        <div class="col-md-3">
+          </div>
+          </div>
           <br>
-          <img alt="image" src="./public/images/eac-logo.png" style="width:90px !important; height:70px !important;"/>
-          <img alt="image" src="./public/images/giz-logo.png" style="width:160px !important;height:50px !important;" />
+        </form>
+        <div class="d-flex flex-column justify-content- align-items-center mt-4">
+          <button type="button" class="btn btn-sm btn-primary col-md-4 p-2 rounded-0 border-0" style="background-color: #1d608f;" onclick="window.location.href='account-activation.html'">
+            Register
+          </button>
+          <span class="mt-3">Already a member ? <a href="login.html">Login</a></span>
         </div>
       </div>
     </div>
-  </footer>
+  
+    <footer class="footer w-100 mt-4" style="background-color: #1d608f;bottom:0;">
+      <div class="container-fluid" style="color: white">
+        <div class="row justify-content-around">
+          <div class="col-6 col-md-3">
+            <h5>East African Community</h5>
+            <p>
+              P.O.Box 1096<br />Arusha, Tanzania<br />EAC Close Africa Mashariki
+              Road
+            </p>
+          </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+          <div class="col-6 col-md-3" id="contacts">
+            <h5>Contacts</h5>
+            <p>
+              eac@eachq.org<br />+255 (0)27 216 2100<br />+255 (0)27 216 2190
+            </p>
+          </div>
+      
+          <div class="col-md-3 d-none d-md-block">
+            <br>
+            <img alt="image" src="./public/images/eac-logo.png" style="width:90px !important; height:70px !important;"/>
+            <img alt="image" src="./public/images/giz-logo.png" style="width:160px !important;height:50px !important;" />
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Destinations</title>
+    <title>MRA Application</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
@@ -53,6 +53,10 @@
                     </li>
     
                     <li>
+                        <a href="applicant-dashboard.html"><i class="fa fa-home"></i> <span class="nav-label">Applicant Dashboard</span></a>
+                    </li>
+    
+                    <li>
                         <a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 </ul>
@@ -87,6 +91,11 @@
                 <div class="col-lg-7">
                     <div class="ibox">
                         <div class="ibox-content">
+                            <div class="row d-flex justify-content-center">
+                                <img class="img-md" src="./public/images/tanzania-flag.png" style="height: 40px; width:70px;border-radius:2px;" alt=""> 
+                            </div>
+                            <br>
+
                             <h3 style="font-weight:600;">ENGINEERS BOARD OF TANZANIA - MRA APPLICATION FORM</h3>
 
                             <br>
@@ -103,19 +112,19 @@
                                       </div>
 
                                       <div class="form-group">
-                                        <label for="password">Select State</label>
+                                        <label for="password">Select Competent Authority</label>
                                         <select class="form-control rounded-0" id="state">
                                             <option value=""></option>
-                                            <option value="kenya">Kenya</option>
-                                            <option value="rwanda">Rwanda</option>
-                                            <option value="south-sudan">South Sudan</option>
-                                            <option value="uganda">Uganda</option>
-                                            <option value="tanzania">Tanzania</option>
+                                            <option value="kenya">Engineers Board of Kenya</option>
+                                            <option value="rwanda">Institution of Engineers Rwanda</option>
+                                            <option value="south-sudan">South Sudan Engineering Society</option>
+                                            <option value="uganda">Uganda Engineers Registration Board </option>
+                                            <option value="tanzania">Engineers Registration Board</option>
                                           </select>
                                       </div>
 
                                       <div class="form-group">
-                                        <label for="license_number">License Number</label>
+                                        <label for="license_number">Home License Number</label>
                                         <input type="text" class="form-control rounded-0" id="license_number" />
                                       </div>
                                     </form>
@@ -170,7 +179,7 @@
         Dropzone.options.dropzoneForm = {
             paramName: "file", // The name that will be used to transfer the file
             maxFilesize: 2, // MB
-            dictDefaultMessage: '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><span style="color:blue;">Click to upload</span> supporting documents'
+            dictDefaultMessage: '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><p style="font-size:0.8rem;"><span style="color:blue;">Click to upload</span> supporting documents</p>'
         };
 
         $(".select2").select2({
