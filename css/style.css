@@ -851,7 +851,7 @@ h5 {
   font-weight: 600;
 }
 .nav > li > a {
-  color: #a7b1c2;
+  color: black !important;
   font-weight: 600;
   padding: 14px 20px 14px 25px;
   display: block;
@@ -873,8 +873,9 @@ h5 {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #293846;
-  color: white;
+  /* background-color: #293846; */
+  background-color: #1D608F;
+  color: white !important;
 }
 .nav .open > a,
 .nav .open > a:hover,
@@ -997,8 +998,11 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background-color: #2f4050;
-  background-image: url("patterns/header-profile.png");
+
+  background-color: white;
+  
+  /* background-color: #2f4050;
+  background-image: url("patterns/header-profile.png"); */
 }
 .caret {
   display: inline-block;
