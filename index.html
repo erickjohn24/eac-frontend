@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>East African Community Mutual Recognition Portal</title>
+    <title>East African Community - Mutual Recognition Portal</title>
     
     <link rel="icon" type="image/x-icon" href="./public/images/eac-logo.png">
     
@@ -28,15 +28,9 @@
         font-size: 3rem;
         margin-bottom: 20px;
       }
-      .section-padding {
-        padding: 60px 0;
-      }
-      .flags img {
-        max-width: 100px;
-      }
+
       .footer {
         background-color: #f8f9fa;
-        padding: 20px 0;
       }
 
       .btn-link {
@@ -53,47 +47,49 @@
   <body style="background-color: white">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1d608f;">
-    <img
-        src="./public/images/eac-logo.png"
-        alt="EAC Logo"
-        height="50"
-        class="logo" />
+      <div class="container">
+          <img
+           src="./public/images/eac-logo.png"
+           alt="EAC Logo"
+           height="50"
+           class="logo" />
 
-      <button
-        class="navbar-toggler bg-transparent"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active" style="color:white !important;">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item" style="color:white !important;">
-            <a class="nav-link" href="#faq">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacts">Contacts</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="registration.html">Registration</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ca-login.html">CA Login</a>
-          </li>
-        </ul>
+          <button
+           class="navbar-toggler bg-transparent"
+           type="button"
+           data-toggle="collapse"
+           data-target="#navbarNav"
+           aria-controls="navbarNav"
+           aria-expanded="false"
+           aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+   
+          <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto" style="display: flex !important;">
+             <li class="nav-item active" style="color:white !important;">
+               <a class="nav-link" href="index.html">Home</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="index.html#about">About</a>
+             </li>
+             <li class="nav-item" style="color:white !important;">
+               <a class="nav-link" href="index.html#faq">FAQ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="index.html#contacts">Contacts</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="registration.html">Registration</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="login.html">Login</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="ca-login.html">CA Login</a>
+             </li>
+           </ul>
+         </div>
       </div>
     </nav>
 
@@ -106,7 +102,7 @@
         background-blend-mode: overlay;
         background-color: rgba(0, 0, 0, 0.7);
       ">
-      <div class="ml-4 col-12 d-none d-md-block">
+      <div class="container d-none d-md-block">
         <span style="font-size: 2.5rem;font-weight:500;">East African Community</span><br />
         <span style="font-size: 3rem;font-weight:500;">Mutual Recognition Portal</span>
       </div>
@@ -118,18 +114,21 @@
     </div>
 
     <div
-      class="row justify-content-around align-items-center text-white d-none d-md-flex m-0"
-      style="width: 100vw; height:4rem; background-color: #1d608f">
-      <span style="font-size: 1.1rem">KENYA</span>
-      <span style="font-size: 1.1rem">RWANDA</span>
-      <span style="font-size: 1.1rem">SOUTH SUDAN</span>
-      <span style="font-size: 1.1rem">UGANDA</span>
-      <span style="font-size: 1.1rem">TANZANIA</span>
+      class="text-white d-none d-md-flex m-0"
+      style=" height:4rem; background-color: #1d608f">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span style="font-size: 1.1rem">KENYA</span>
+        <span style="font-size: 1.1rem">RWANDA</span>
+        <span style="font-size: 1.1rem">SOUTH SUDAN</span>
+        <span style="font-size: 1.1rem">UGANDA</span>
+        <span style="font-size: 1.1rem">TANZANIA</span>
+      </div>
     </div>
 
+    <div class="container">
     <!-- About Section -->
     <br>
-    <div id="about" class="container section-padding p-3 text-dark">
+    <div id="about" class="text-dark">
       <div class="row justify-content-center align-items-center w-100">
         <div class="col-md-8">
           <h2 class="text-dark mb-4" style="font-weight: 500;">
@@ -156,8 +155,9 @@
       </div>
     </div>
 
+    <br>
     <!-- FAQ Section -->
-    <div id="faq" class="container section-padding bg-white p-4 mb-4">
+    <div id="faq" class="bg-white">
       <h2 class="text-dark" style="font-weight: 500;">
         FAQ
         <hr style="background-color: #1d608f; height: 4px; width: 35px; margin: 0; align-self: flex-start;" />
@@ -242,8 +242,6 @@
       </div>
     </div>
 
-    <div style="height: 1rem"></div>
-
     <hr class="mx-4 d-none d-md-flex" style="background-color: #1d608f;height:1px;" />
 
     <div class="d-none d-md-flex justify-content-around align-items-center pb-4">
@@ -278,11 +276,13 @@
         height="72"
       />
     </div>
-
+    </div>
+    
+    <br><br>
     <!-- Footer -->
-    <footer class="p-3" style="background-color: #1d608f">
-      <div class="container-fluid" style="color: white">
-        <div class="row justify-content-around">
+    <footer class="py-3" style="background-color: #1d608f">
+      <div class="container" style="color: white">
+        <div class="row justify-content-between">
           <div class="col-md-3">
             <h5>East African Community</h5>
             <p>
