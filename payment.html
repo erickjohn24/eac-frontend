@@ -92,7 +92,8 @@
                         <div class="ibox-content">
                             <div class="container">
                                 <div class="row d-flex justify-content-start">
-                                    <img class="img-md" src="./public/images/tanzania-flag.png" style="height: 40px; width:70px;border-radius:2px;" alt=""> 
+                                    <img class="img-md" id="flag-container" src="./public/images/tanzania-flag.png" style="height: 40px; width:70px;border-radius:2px;" alt=""> 
+
                                 </div>
                             </div>
                             <br>
@@ -213,15 +214,10 @@
 
     
     <script>
-        Dropzone.options.dropzoneForm = {
-            paramName: "file", // The name that will be used to transfer the file
-            maxFilesize: 2, // MB
-            dictDefaultMessage: '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><span style="color:blue;">Click to upload</span> supporting documents'
-        };
-
-        $(".select2").select2({
-            placeholder: null,
-        });    
+        const destination=new URLSearchParams(window.location.search).get('destination');
+        const imgElement=document.getElementById('flag-container');
+        
+        imgElement.src=`./public/images/${destination}-flag.png`;
     </script>
 </body>
 </html>
