@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Registration</title>
 
     <link rel="icon" type="image/x-icon" href="./public/images/eac-logo.png">
@@ -11,14 +11,14 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/animate.css" rel="stylesheet">
-    
+
     <script src="./js/jquery-3.1.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.js"></script>
-    
+
     <style>
       .hero {
-        background-image: url("./public/images/flags.png"); 
+        background-image: url("./public/images/flags.png");
         background-size: cover;
         background-position: center;
         color: white;
@@ -44,7 +44,7 @@
       }
 
       .nav-item > a{
-        color:white !important; 
+        color:white !important;
         margin-right: 1.5rem;
       }
 
@@ -74,7 +74,7 @@
            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-   
+
           <div class="collapse navbar-collapse" id="navbarNav">
            <ul class="navbar-nav ml-auto" style="display: flex !important;">
              <li class="nav-item active" style="color:white !important;">
@@ -102,7 +102,7 @@
          </div>
       </div>
     </nav>
-    
+
     <div class="container d-flex justify-content-center align-items-center" style="height: 75vh;">
       <div class="col-md-7">
         <form class="row w-100 justify-content-start">
@@ -155,14 +155,26 @@
               <input
                 type="checkbox"
                 class="form-check-input"
-                id="terms" /> 
+                id="terms" />
+              <label class="form-check-label" for="terms"
+                >I agree to the
+                <a href="#" style="font-size: 14px"
+                  >Data Privacy</a
+                ></label
+              >
+            </div>
+            <div class="col-md-12">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="terms" />
               <label class="form-check-label" for="terms"
                 >I agree to the
                 <a href="#" style="font-size: 14px"
                   >Terms & Privacy</a
                 ></label
               >
-          </div>
+            </div>
           </div>
           <br>
         </form>
@@ -174,7 +186,8 @@
         </div>
       </div>
     </div>
-  
+
+    <!-- Footer -->
     <footer class="py-3" style="background-color: #1d608f">
       <div class="container" style="color: white">
         <div class="row justify-content-between">
@@ -192,11 +205,11 @@
               eac@eachq.org<br />+255 (0)27 216 2100<br />+255 (0)27 216 2190
             </p>
           </div>
-      
+
           <div class="col-md-3">
             <br>
-            <img alt="image" src="./public/images/eac-logo.png" style="width:90px !important; height:70px !important;" />
-            <img alt="image" src="./public/images/giz-logo.png" style="width:160px !important;height:50px !important;" />
+            <img alt="image" src="./public/images/eac-logo.png" style="width:80px !important; height:74px !important;" />
+            <img alt="image" src="./public/images/implemented-by-giz-logo.jpg" style="width:150px !important;height:56px !important;" />
           </div>
         </div>
       </div>
