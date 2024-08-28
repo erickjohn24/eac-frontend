@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Profile</title>
-    
+
     <link rel="icon" type="image/x-icon" href="./public/images/eac-logo.png">
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
@@ -32,7 +32,7 @@
                             <img alt="image" class="p-2" src="./public/images/eac-logo.png" style="width:60px !important; height:60px !important;"/>
                         </div>
                     </li>
-                 
+
                     <li>
                         <a href="applicant-dashboard.html"><i class="fa fa-home"></i> <span class="nav-label">Applicant Dashboard</span></a>
                     </li>
@@ -40,53 +40,61 @@
                     <li>
                         <a href="notifications.html"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
                     </li>
-    
+
                     <li>
                         <a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 </ul>
-    
+
             </div>
         </nav>
 
         <div id="page-wrapper" class="gray-bg" style="background-image: url('./public/images/background.jpg');background-size:cover;">
-        <div class="row border-bottom">
+          <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+              <div class="navbar-header">
+                  <a class="navbar-minimalize minimalize-styl-2 btn" href="#"><i class="fa fa-bars" style="font-size: 1.5rem;"></i> </a>
+              </div>
 
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn" href="#"><i class="fa fa-bars" style="font-size: 1.5rem;"></i> </a>
-        </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">David Williams</span>
+                    </li>
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message">David Williams</span>
-                </li>
-        
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> 
-                    </a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+          </div>
 
-        </nav>
-        </div>
+          <div class="row wrapper wrapper-content animated fadeInRight">
+            <div class="col-md-6">
+              <span class="text-warning"><b>Note</b>: Home CA is selected at the time of registration</span><br/>
+              <iframe src="https://engineers.ebk.go.ke/" title="Login to Kenya EBK" width="100%" height="800px"></iframe>
 
-        <div class="wrapper wrapper-content animated fadeInRight">
-            <span class="text-warning"><b>Note</b>: Home CA is selected at the time of registration</span><br/>
-            <iframe src="https://engineers.ebk.go.ke/" title="Login to Kenya EBK" width="100%" height="800px"></iframe>
-
-            <div class="row container justify-content-center">
-            <button
-                type="button"
-                onclick="window.location.href='account-activated.html'"
-                class="btn btn-primary btn-block mt-4 col-4 col-md-2  rounded-0 border-0" style="background-color: #1d608f;">
-                Proceed
-            </button>
+              <div class="row container justify-content-center">
+                <button
+                    type="button"
+                    onclick="window.location.href='account-activated.html'"
+                    class="btn btn-primary btn-block mt-4 col-4 col-md-2  rounded-0 border-0" style="background-color: #1d608f;">
+                    Proceed
+                </button>
+              </div>
             </div>
+            <div class="col-md-3 gray-bg"><br/>
+              The login will check the compliance with home CA, and the following will be checked:<br/>
+              <ul>
+                <li>Valid Home CA username and password</li>
+                <li>Valid license</li>
+                <li>Valid CPD</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
+    </div>
 
 
 
