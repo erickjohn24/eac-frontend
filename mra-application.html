@@ -160,8 +160,12 @@
                         <input type="text" class="form-control rounded-0" />
                       </div>
 
+                      <br />
                       <div class="form-group">
-                        <label>License Copy</label>
+                        <label
+                          >Upload your valid Professional License (PDF or Image
+                          format)
+                        </label>
                         <input
                           type="file"
                           accept="image/jpeg, image/png, image/jpg"
@@ -169,8 +173,12 @@
                           style="padding: 3px 12px" />
                       </div>
 
+                      <br />
                       <div class="form-group">
-                        <label>Degree Copy</label>
+                        <label
+                          >Upload your Academic Degree Certificate (PDF or Image
+                          format)</label
+                        >
                         <input
                           type="file"
                           accept="image/jpeg, image/png, image/jpg"
@@ -178,8 +186,12 @@
                           style="padding: 3px 12px" />
                       </div>
 
+                      <br />
                       <div class="form-group">
-                        <label>Passport Copy</label>
+                        <label
+                          >Upload a clear image or PDF of your ID (Passport,
+                          Driver’s License, or National ID)</label
+                        >
                         <input
                           type="file"
                           accept="image/jpeg, image/png, image/jpg"
@@ -196,7 +208,8 @@
                       <label class="form-check-label" for="terms"
                         >I agree to the
                         <a href="#" style="font-size: 14px"
-                          >Terms & Conditions for ERB Tanzania</a
+                          >Terms & Conditions for
+                          <span id="home-ca">ERB Tanzania</span></a
                         ></label
                       >
                     </div>
@@ -245,21 +258,35 @@
         "destination"
       );
       const imgElement = document.getElementById("flag-container");
+      imgElement.src = `./public/images/${destination}-flag.png`;
+
+      const competentAuthority = document.getElementById("home-ca");
+      switch (destination) {
+        case "kenya":
+          competentAuthority.textContent = "Engineers Board of Kenya";
+          break;
+        case "rwanda":
+          competentAuthority.textContent = "Institution of Engineers Rwanda";
+          break;
+        case "south-sudan":
+          competentAuthority.textContent = "South Sudan Engineering Society";
+          break;
+        case "uganda":
+          competentAuthority.textContent =
+            "Uganda Engineers Registration Board";
+          break;
+        case "tanzania":
+          competentAuthority.textContent = "Engineers Registration Board";
+          break;
+        default:
+          competentAuthority.textContent = "Engineers Board";
+      }
 
       const proceedButton = document.getElementById("proceed-btn");
 
       proceedButton.addEventListener("click", () => {
         window.location.href = `payment.html?destination=${destination}`;
       });
-
-      imgElement.src = `./public/images/${destination}-flag.png`;
-
-      Dropzone.options.dropzoneForm = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 2, // MB
-        dictDefaultMessage:
-          '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><p style="font-size:0.8rem;"><span style="color:blue;">Click to upload</span> supporting documents</p>',
-      };
     </script>
   </body>
 </html>

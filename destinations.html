@@ -1,161 +1,251 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Destinations</title>
 
-    <link rel="icon" type="image/x-icon" href="./public/images/eac-logo.png">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./public/images/eac-logo.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 
     <style>
-        .btn-outline-custom {
-            border-color: #1D608F;
-            color: #1D608F;
-          }
+      .btn-outline-custom {
+        border-color: #1d608f;
+        color: #1d608f;
+      }
 
-        .btn-outline-custom:hover {
-            background-color: #1D608F;
-            color: white;
-        }
+      .btn-outline-custom:hover {
+        background-color: #1d608f;
+        color: white;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="wrapper">
+      <nav
+        class="navbar-default navbar-static-side"
+        role="navigation"
+        style="background-color: white">
+        <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+              <div class="dropdown profile-element text-center">
+                <img
+                  src="./public/images/eac-logo.png"
+                  alt="EAC Logo"
+                  height="50"
+                  class="logo" />
+              </div>
+              <div class="logo-element" style="background-color: white">
+                <img
+                  alt="image"
+                  src="./public/images/eac-logo.png"
+                  style="width: 50px !important; height: 40px !important" />
+              </div>
+            </li>
 
-        
-        <nav class="navbar-default navbar-static-side" role="navigation" style="background-color: white;">
-            <div class="sidebar-collapse">
-                <ul class="nav metismenu" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element text-center">
-                            <img alt="image"  src="./public/images/eac-logo.png" style="width:85px !important; height:60px !important;"/>
-                        </div>
-                        <div class="logo-element" style="background-color: white;">
-                            <img alt="image"  src="./public/images/eac-logo.png" style="width:50px !important; height:40px !important;"/>
-                        </div>
-                    </li>
-                 
-                    <li>
-                        <a href="applicant-dashboard.html"><i class="fa fa-home"></i> <span class="nav-label">Applicant Dashboard</span></a>
-                    </li>
+            <li>
+              <a href="applicant-dashboard.html"
+                ><i class="fa fa-home"></i>
+                <span class="nav-label">Applicant Dashboard</span></a
+              >
+            </li>
 
-                    <li>
-                        <a href="notifications.html"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
-                    </li>
-    
-                    <li>
-                        <a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
-                    </li>
-                </ul>
-    
-            </div>
-        </nav>
-    
+            <li>
+              <a href="notifications.html"
+                ><i class="fa fa-bell"></i>
+                <span class="nav-label">Notifications</span></a
+              >
+            </li>
 
-        <div id="page-wrapper" class="gray-bg" style="background-image: url('./public/images/background.jpg');background-size:cover;">
-        <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn" href="#"><i class="fa fa-bars" style="font-size: 1.5rem;"></i> </a>
+            <li>
+              <a href="profile.html"
+                ><i class="fa fa-user"></i>
+                <span class="nav-label">Profile</span></a
+              >
+            </li>
+          </ul>
         </div>
+      </nav>
+
+      <div
+        id="page-wrapper"
+        class="gray-bg"
+        style="
+          background-image: url('./public/images/background.jpg');
+          background-size: cover;
+        ">
+        <div class="row border-bottom">
+          <nav
+            class="navbar navbar-static-top"
+            role="navigation"
+            style="margin-bottom: 0">
+            <div class="navbar-header">
+              <a class="navbar-minimalize minimalize-styl-2 btn" href="#"
+                ><i class="fa fa-bars" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message">David Williams</span>
-                </li>
-        
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> 
-                    </a>
-                </li>
+              <li>
+                <span class="m-r-sm text-muted welcome-message"
+                  >David Williams</span
+                >
+              </li>
+
+              <li>
+                <a href="login.html">
+                  <i class="fa fa-sign-out"></i>
+                </a>
+              </li>
             </ul>
-
-        </nav>
+          </nav>
         </div>
-       
-        <div class="wrapper wrapper-content  animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox">
-                        <div class="ibox-content">
-                            <h3 style="font-weight:600;">Apply for MRA</h3>
-                            <p>Please select the host CA where you want to apply for MRA.</p>
 
-                            <div class="container">
-                                <div class="row justify-content-center justify-content-md-start">
-                                    <div class="card mr-md-5" style="width: 13rem;height:17rem;">
-                                        <img class="card-img-top p-3" src="./public/images/kenya-flag.png" style="height: 130px;">
-                                        <div class="card-body">
-                                          <h5 class="card-title" style="font-size: 18px;">Kenya</h5>
-                                          <br>
-                                          <div class="container px-0 d-flex justify-content-end">
-                                            <a href="mra-application.html?destination=kenya" class="btn btn-outline-custom">Apply</a>
-                                          </div>
-                                        </div>
-                                    </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="ibox">
+                <div class="ibox-content">
+                  <h3 style="font-weight: 600">Apply for MRA</h3>
+                  <p>
+                    Please select the host CA where you want to apply for MRA.
+                  </p>
 
-                                    <div class="card mr-md-5 mt-5 mt-md-0" style="width: 13rem;height:17rem;">
-                                        <img class="card-img-top p-3" src="./public/images/rwanda-flag.png" style="height: 130px;">
-                                        <div class="card-body">
-                                          <h5 class="card-title" style="font-size: 18px;">Rwanda</h5>
-                                          <br>
-                                          <div class="container px-0 d-flex justify-content-end">
-                                            <a href="mra-application.html?destination=rwanda" class="btn btn-outline-custom">Apply</a>
-                                          </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mr-md-5 mt-5 mt-md-0" style="width: 13rem;height:17rem;">
-                                        <img class="card-img-top p-3" src="./public/images/sudan-flag.png" style="height: 130px;">
-                                        <div class="card-body">
-                                          <h5 class="card-title" style="font-size: 18px;">South Sudan</h5>
-                                          <br>
-                                          <div class="container px-0 d-flex justify-content-end">
-                                            <a href="mra-application.html?destination=sudan" class="btn btn-outline-custom">Apply</a>
-                                          </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mr-md-5 mt-5 mt-md-0" style="width: 13rem;height:17rem;">
-                                        <img class="card-img-top p-3" src="./public/images/uganda-flag.png" style="height: 130px;">
-                                        <div class="card-body">
-                                          <h5 class="card-title" style="font-size: 18px;">Uganda</h5>
-                                          <br>
-                                          <div class="container px-0 d-flex justify-content-end">
-                                            <a href="mra-application.html?destination=uganda" class="btn btn-outline-custom">Apply</a>
-                                          </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mr-md-5 mt-5" style="width: 13rem;height:17rem;">
-                                        <img class="card-img-top p-3" src="./public/images/tanzania-flag.png" style="height: 130px;">
-                                        <div class="card-body">
-                                          <h5 class="card-title" style="font-size: 18px;">Tanzania</h5>
-                                          <br>
-                                          <div class="container px-0 d-flex justify-content-end">
-                                            <a href="mra-application.html?destination=tanzania" class="btn btn-outline-custom">Apply</a>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                  <div class="container">
+                    <div
+                      class="row justify-content-center justify-content-md-start">
+                      <div
+                        class="card mr-md-5"
+                        style="width: 13rem; height: 17rem">
+                        <img
+                          class="card-img-top p-3"
+                          src="./public/images/kenya-flag.png"
+                          style="height: 130px" />
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: 18px">
+                            Kenya
+                          </h5>
+                          <br />
+                          <div
+                            class="container px-0 d-flex justify-content-end">
+                            <a
+                              href="mra-application.html?destination=kenya"
+                              class="btn btn-outline-custom"
+                              >Apply</a
+                            >
+                          </div>
                         </div>
+                      </div>
+
+                      <div
+                        class="card mr-md-5 mt-5 mt-md-0"
+                        style="width: 13rem; height: 17rem">
+                        <img
+                          class="card-img-top p-3"
+                          src="./public/images/rwanda-flag.png"
+                          style="height: 130px" />
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: 18px">
+                            Rwanda
+                          </h5>
+                          <br />
+                          <div
+                            class="container px-0 d-flex justify-content-end">
+                            <a
+                              href="mra-application.html?destination=rwanda"
+                              class="btn btn-outline-custom"
+                              >Apply</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="card mr-md-5 mt-5 mt-md-0"
+                        style="width: 13rem; height: 17rem">
+                        <img
+                          class="card-img-top p-3"
+                          src="./public/images/sudan-flag.png"
+                          style="height: 130px" />
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: 18px">
+                            South Sudan
+                          </h5>
+                          <br />
+                          <div
+                            class="container px-0 d-flex justify-content-end">
+                            <a
+                              href="mra-application.html?destination=sudan"
+                              class="btn btn-outline-custom"
+                              >Apply</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="card mr-md-5 mt-5 mt-md-0"
+                        style="width: 13rem; height: 17rem">
+                        <img
+                          class="card-img-top p-3"
+                          src="./public/images/uganda-flag.png"
+                          style="height: 130px" />
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: 18px">
+                            Uganda
+                          </h5>
+                          <br />
+                          <div
+                            class="container px-0 d-flex justify-content-end">
+                            <a
+                              href="mra-application.html?destination=uganda"
+                              class="btn btn-outline-custom"
+                              >Apply</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="card mr-md-5 mt-5"
+                        style="width: 13rem; height: 17rem">
+                        <img
+                          class="card-img-top p-3"
+                          src="./public/images/tanzania-flag.png"
+                          style="height: 130px" />
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: 18px">
+                            Tanzania
+                          </h5>
+                          <br />
+                          <div
+                            class="container px-0 d-flex justify-content-end">
+                            <a
+                              href="mra-application.html?destination=tanzania"
+                              class="btn btn-outline-custom"
+                              >Apply</a
+                            >
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-        </div>
-        
+      </div>
+    </div>
+
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -168,5 +258,5 @@
     <script src="js/plugins/pace/pace.min.js"></script>
 
     <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
-</body>
+  </body>
 </html>
