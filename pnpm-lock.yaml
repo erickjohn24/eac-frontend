@@ -64,6 +64,28 @@ importers:
         specifier: ^5.7.3
         version: 5.9.3
 
+  apps/worker:
+    dependencies:
+      '@tz/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@tz/engine':
+        specifier: workspace:*
+        version: link:../../packages/engine
+      '@tz/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      drizzle-orm:
+        specifier: ^0.44.0
+        version: 0.44.7(@types/better-sqlite3@7.6.13)(@types/pg@8.20.0)(better-sqlite3@12.11.1)(pg@8.22.0)
+    devDependencies:
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.0
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+
   packages/agent-core:
     dependencies:
       '@anthropic-ai/sdk':

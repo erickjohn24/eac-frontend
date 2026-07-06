@@ -261,14 +261,14 @@ router.post(
       return;
     }
     const directors = JSON.stringify({
-      fullName: [].concat(req.body["director_fullName[]"] ?? []),
-      nin: [].concat(req.body["director_nin[]"] ?? []),
-      tin: [].concat(req.body["director_tin[]"] ?? []),
+      fullName: toArray(req.body["director_fullName[]"]),
+      nin: toArray(req.body["director_nin[]"]),
+      tin: toArray(req.body["director_tin[]"]),
     });
     const shareholders = JSON.stringify({
-      fullName: [].concat(req.body["shareholder_fullName[]"] ?? []),
-      nin: [].concat(req.body["shareholder_nin[]"] ?? []),
-      shares: [].concat(req.body["shareholder_shares[]"] ?? []),
+      fullName: toArray(req.body["shareholder_fullName[]"]),
+      nin: toArray(req.body["shareholder_nin[]"]),
+      shares: toArray(req.body["shareholder_shares[]"]),
     });
     const info = db
       .prepare(

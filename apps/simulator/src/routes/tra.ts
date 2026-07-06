@@ -87,8 +87,8 @@ router.post("/tin/company", auth(), (req: Request, res: Response) => {
   const info = db
     .prepare(
       `INSERT INTO tin_applications
-        (account_id, incorporation_number, company_name, physical_address, region, business_sector, rep_full_name, rep_nin, rep_tin, status, appointment_ref, appointment_location, biometrics_done)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'biometrics_pending', '', 'TRA Ilala Tax Region Office', 0)`,
+        (account_id, incorporation_number, company_name, physical_address, region, business_sector, rep_full_name, rep_nin, rep_tin, status, appointment_ref, biometrics_done)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'biometrics_pending', '', 0)`,
     )
     .run(
       acc.id,

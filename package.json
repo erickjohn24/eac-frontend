@@ -17,7 +17,7 @@
     "db:migrate": "pnpm --filter @tz/db migrate",
     "db:seed": "pnpm --filter @tz/db seed",
     "db:reset": "pnpm --filter @tz/db reset",
-    "demo": "node scripts/demo.mjs",
+    "demo": "pnpm --filter @tz/worker exec tsx src/demo.ts",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,mjs}\""
   },
   "devDependencies": {

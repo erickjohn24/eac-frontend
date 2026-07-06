@@ -8,7 +8,7 @@
 <% } else if (row.status === 'biometrics_pending') { %>
   <p>A one-time biometric visit by a director is required to finalise the TIN.</p>
   <p class="kv"><b>Appointment reference:</b> <span id="appointment-ref"><%= row.appointment_ref %></span></p>
-  <p class="kv"><b>Location:</b> <span id="appointment-location"><%= row.appointment_location %></span></p>
+  <p class="kv"><b>Location:</b> <span id="appointment-location">TRA Ilala Tax Region Office</span></p>
 <% } else if (row.status === 'issued') { %>
   <p class="notice">Company TIN issued.</p>
   <p class="kv"><b>Company TIN:</b> <span id="company-tin"><%= row.tin %></span></p>
