@@ -93,6 +93,9 @@ importers:
       next:
         specifier: ^15.1.6
         version: 15.5.20(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      pdfkit:
+        specifier: ^0.15.1
+        version: 0.15.2
       react:
         specifier: ^19.0.0
         version: 19.2.7
@@ -112,6 +115,9 @@ importers:
       '@types/node':
         specifier: ^22.10.6
         version: 22.20.0
+      '@types/pdfkit':
+        specifier: ^0.13.5
+        version: 0.13.9
       '@types/react':
         specifier: ^19.0.7
         version: 19.2.17

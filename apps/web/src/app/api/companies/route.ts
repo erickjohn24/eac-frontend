@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { getDb, companies, people, users } from "@tz/db";
+import { generateCompanyDocuments } from "@/lib/docs";
 import type { OnboardingState } from "@/lib/onboarding-types";
 
 /** Persist the onboarding draft as a Company + People, ready for the pipeline. */
@@ -60,5 +61,9 @@ export async function POST(req: Request) {
     );
   }
 
-  return NextResponse.json({ id: companyId });
+  // generate the incorporation documents + signature requests up front so
+  // every signer has their link the moment the company exists
+  const { documents, signatures } = await generateCompanyDocuments(companyId);
+
+  return NextResponse.json({ id: companyId, documents, signatures });
 }
