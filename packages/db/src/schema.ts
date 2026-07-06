@@ -447,6 +447,53 @@ export const portalCredentials = pgTable(
   (t) => [uniqueIndex("credentials_company_portal_idx").on(t.companyId, t.portal)],
 );
 
+/* ------------------------- onboarding drafts --------------------------- */
+
+/** Save & resume: the wizard autosaves its state; a resume token restores it
+ *  on any device. Lightweight by design — full accounts come with auth. */
+export const onboardingDrafts = pgTable(
+  "onboarding_drafts",
+  {
+    id: id(),
+    token: text("token").notNull().unique(),
+    state: jsonb("state").$type<Record<string, unknown>>().notNull().default({}),
+    email: text("email"),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [index("drafts_token_idx").on(t.token)],
+);
+
+/* --------------------------- e-signatures ------------------------------ */
+
+/** Multi-party signing: each director/shareholder gets their own signing link
+ *  for each document that needs them (the Clerky pattern). */
+export const signatureRequests = pgTable(
+  "signature_requests",
+  {
+    id: id(),
+    documentId: uuid("document_id")
+      .notNull()
+      .references(() => documents.id, { onDelete: "cascade" }),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    personId: uuid("person_id")
+      .notNull()
+      .references(() => people.id, { onDelete: "cascade" }),
+    token: text("token").notNull().unique(),
+    status: text("status").notNull().default("pending"), // pending | signed | declined
+    signatureText: text("signature_text"),
+    signedAt: timestamp("signed_at", { withTimezone: true }),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [
+    index("signature_company_idx").on(t.companyId),
+    uniqueIndex("signature_doc_person_idx").on(t.documentId, t.personId),
+  ],
+);
+
 /* --------------------------- fulfillment ------------------------------- */
 
 export const fulfillmentOrders = pgTable(

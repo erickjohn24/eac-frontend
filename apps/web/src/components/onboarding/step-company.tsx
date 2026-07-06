@@ -332,9 +332,10 @@ function StructureCard({
                 <Field
                   label={
                     <LabelWithTip label="Share capital (TZS)">
-                      The total value the owners commit to the company. BRELA fees scale
-                      with it; TSh 5,000,000 keeps you in the lowest band while looking
-                      credible to banks.
+                      The total value of your company's shares. It's not money you pay
+                      anyone — it's how ownership is split. BRELA fees scale with it;
+                      TSh 5,000,000 keeps you in the lowest band and looks credible to
+                      banks. You rarely need to change this.
                     </LabelWithTip>
                   }
                 >

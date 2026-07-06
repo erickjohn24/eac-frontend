@@ -2,9 +2,10 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Link2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { emptyState, type OnboardingState } from "@/lib/onboarding-types";
+import { useDraft } from "@/lib/use-draft";
 import { StepVision } from "./step-vision";
 import { StepCompany } from "./step-company";
 import { StepPeople } from "./step-people";
@@ -27,8 +28,23 @@ export function Wizard() {
 
   const patch = (p: Partial<OnboardingState>) => setState((s) => ({ ...s, ...p }));
 
+  const { saveState, resumeUrl, clear } = useDraft(state, setState);
+  const [copied, setCopied] = useState(false);
+
   const gate = useMemo(() => validate(step, state), [step, state]);
   const substeps = useMemo(() => substepStatus(step, state), [step, state]);
+
+  async function copyResumeLink() {
+    const url = resumeUrl();
+    if (!url) return;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
 
   function go(next: number) {
     setDir(next > step ? 1 : -1);
@@ -45,6 +61,7 @@ export function Wizard() {
         body: JSON.stringify(state),
       });
       const { id } = await res.json();
+      clear();
       router.push(`/dashboard/${id}?launched=1`);
     } catch {
       setSubmitting(false);
@@ -144,9 +161,24 @@ export function Wizard() {
                 })}
               </ol>
             </nav>
-            <p className="text-caption">
-              Your progress saves automatically.
-            </p>
+            <div className="space-y-2">
+              <p className="text-caption" aria-live="polite">
+                {saveState === "saving"
+                  ? "Saving…"
+                  : saveState === "saved"
+                    ? "Progress saved"
+                    : "Your progress saves automatically."}
+              </p>
+              {resumeUrl() && (
+                <button
+                  type="button"
+                  onClick={copyResumeLink}
+                  className="inline-flex items-center gap-1.5 text-[0.75rem] font-medium text-tz-300 transition-colors hover:text-tz-400"
+                >
+                  <Link2 className="size-3" /> {copied ? "Copied — finish anywhere" : "Copy resume link"}
+                </button>
+              )}
+            </div>
           </div>
         </aside>
 

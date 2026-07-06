@@ -19,19 +19,19 @@ const ROLES: { id: Role; label: string; explain: string }[] = [
     id: "director",
     label: "Director",
     explain:
-      "Legally responsible for running the company. Directors need a verified National ID and their own TIN before BRELA will register the company.",
+      "Runs the company and is legally responsible for it. This means BRELA needs their verified National ID and personal TIN before it will register the company — we check both here so nothing bounces later.",
   },
   {
     id: "shareholder",
     label: "Shareholder",
     explain:
-      "Owns part of the company. Shareholders appear on the register and in the beneficial-ownership filing we prepare for you.",
+      "Owns part of the company. Shareholders go on the register, and we prepare the beneficial-ownership filing for you — missing it freezes all BRELA transactions, so it's one of the things we never let slip.",
   },
   {
     id: "signatory",
     label: "Bank signatory",
     explain:
-      "Can sign on the company bank account. Signatories attend the one branch appointment to open it.",
+      "Can sign on the company bank account. Signatories attend one branch appointment — we prepare the full document pack so it's a single visit.",
   },
 ];
 
