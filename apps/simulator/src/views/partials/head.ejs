@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><%= title %></title>
+<style>
+  :root { --gov-green:#1a5632; --gov-gold:#c8a415; --ink:#1a1a1a; --line:#d8d8d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:#f3f4f2; }
+  header.portal-header { display:flex; align-items:center; gap:.6rem; background:var(--gov-green); color:#fff; padding:.7rem 1.2rem; border-bottom:4px solid var(--gov-gold); }
+  header.portal-header .coat { font-size:1.6rem; }
+  header.portal-header .portal-name { font-weight:700; font-size:1.1rem; flex:1; }
+  header.portal-header nav.portal-nav { font-size:.85rem; }
+  header.portal-header .user-email { background:rgba(255,255,255,.15); padding:.2rem .6rem; border-radius:4px; }
+  main { max-width:820px; margin:1.4rem auto; background:#fff; padding:1.6rem 2rem; border:1px solid var(--line); border-radius:6px; }
+  h1 { font-size:1.4rem; margin-top:0; color:var(--gov-green); }
+  h2 { font-size:1.1rem; color:var(--gov-green); }
+  label { display:block; margin:.6rem 0 .2rem; font-weight:600; font-size:.9rem; }
+  input, select, textarea { width:100%; padding:.5rem; border:1px solid var(--line); border-radius:4px; font-size:.95rem; }
+  input[readonly] { background:#f0f0f0; }
+  button { margin-top:1rem; background:var(--gov-green); color:#fff; border:0; padding:.6rem 1.2rem; border-radius:4px; font-size:.95rem; cursor:pointer; }
+  button.secondary { background:#555; }
+  a { color:var(--gov-green); }
+  .error-banner { background:#fdecea; border:1px solid #f5c2c0; color:#a11; padding:.7rem 1rem; border-radius:4px; margin:.8rem 0; }
+  .notice { background:#eef7ee; border:1px solid #b7dfb7; color:#1a5632; padding:.7rem 1rem; border-radius:4px; margin:.8rem 0; }
+  .field-group { border:1px dashed var(--line); padding:.8rem 1rem; margin:.8rem 0; border-radius:4px; }
+  .status-badge { display:inline-block; padding:.25rem .7rem; border-radius:12px; background:#eef; font-weight:700; }
+  .kv { margin:.4rem 0; }
+  .kv b { display:inline-block; min-width:180px; }
+  footer.portal-footer { max-width:820px; margin:1rem auto 2rem; color:#888; font-size:.8rem; text-align:center; }
+  table.bill { width:100%; border-collapse:collapse; margin-top:1rem; }
+  table.bill td { border:1px solid var(--line); padding:.5rem .7rem; }
+</style>
+</head>
+<body>
+<header class="portal-header">
+  <span class="coat" aria-hidden="true">🛡️</span>
+  <span class="portal-name"><%= portalName %></span>
+  <nav class="portal-nav">
+    <% if (userEmail) { %><span class="user-email"><%= userEmail %></span><% } %>
+  </nav>
+</header>
+<main>

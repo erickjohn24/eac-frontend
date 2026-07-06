@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+<h1><%= heading %></h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="licence-form" method="post" action="<%= action %>" enctype="multipart/form-data">
+  <label for="tin">Company TIN</label>
+  <input id="tin" name="tin" value="<%= tin %>" />
+
+  <label for="incorporationNumber">Certificate of incorporation number</label>
+  <input id="incorporationNumber" name="incorporationNumber" value="<%= incorporationNumber %>" />
+
+  <label for="businessName">Business name</label>
+  <input id="businessName" name="businessName" value="<%= businessName %>" />
+
+  <label for="activityCode">Business activity</label>
+  <select id="activityCode" name="activityCode">
+    <option value="G4711">G4711 - General retail trade</option>
+    <option value="J6201">J6201 - Software development</option>
+    <option value="M7020">M7020 - Management consultancy</option>
+    <option value="I5610">I5610 - Restaurant services</option>
+  </select>
+
+  <label for="premisesAddress">Premises address</label>
+  <input id="premisesAddress" name="premisesAddress" />
+
+  <label for="leaseAgreement">Lease agreement (PDF)</label>
+  <input id="leaseAgreement" type="file" name="leaseAgreement" accept="application/pdf" />
+
+  <label for="tinCertificate">TIN certificate (PDF)</label>
+  <input id="tinCertificate" type="file" name="tinCertificate" accept="application/pdf" />
+
+  <button type="submit">Submit licence application</button>
+</form>
+<%- include('../partials/foot') %>

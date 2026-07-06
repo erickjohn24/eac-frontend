@@ -1,0 +1,14 @@
+<%- include('../partials/head') %>
+<h1>OSHA workplace registration</h1>
+<p class="kv"><b>Company:</b> <%= row.company_name %></p>
+<div id="osha-status" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'inspection_pending') { %>
+  <p>An OSHA inspection precedes the compliance registration.</p>
+  <p class="kv"><b>Inspection reference:</b> <span id="inspection-ref"><%= row.inspection_ref %></span></p>
+<% } else if (row.status === 'registered') { %>
+  <p class="notice">Workplace registered successfully.</p>
+  <p class="kv"><b>OSHA number:</b> <span id="osha-number"><%= row.osha_number %></span></p>
+  <p><a id="osha-certificate" href="/osha/workplace/applications/<%= row.id %>/certificate.pdf">Download OSHA certificate (PDF)</a></p>
+<% } %>
+<%- include('../partials/foot') %>

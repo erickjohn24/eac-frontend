@@ -1,0 +1,11 @@
+<%- include('partials/top') %>
+<h1>Verify your email</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<p>A 6-digit verification code has been sent to <b><%= email %></b>. It expires in 15 minutes.</p>
+<form id="otp-form" method="post" action="/tra/verify-otp">
+  <input type="hidden" name="email" value="<%= email %>">
+  <label for="otp">Verification code</label>
+  <input type="text" id="otp" name="otp" maxlength="6" autocomplete="one-time-code" required>
+  <button type="submit">Verify</button>
+</form>
+<%- include('partials/bottom') %>

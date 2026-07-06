@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<h1><%= heading %></h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="<%= formId %>" method="post" action="<%= action %>">
+  <label for="tin">Company TIN</label>
+  <input id="tin" name="tin" value="<%= tin %>" />
+  <label for="companyName">Company name</label>
+  <input id="companyName" name="companyName" value="<%= companyName %>" />
+  <label for="incorporationNumber">Certificate of incorporation number</label>
+  <input id="incorporationNumber" name="incorporationNumber" value="<%= incorporationNumber %>" />
+  <label for="employeeCount">Number of employees</label>
+  <input id="employeeCount" name="employeeCount" />
+  <label for="contactEmail">Contact email</label>
+  <input id="contactEmail" name="contactEmail" type="email" />
+  <button type="submit">Register employer</button>
+</form>
+<%- include('../partials/foot') %>

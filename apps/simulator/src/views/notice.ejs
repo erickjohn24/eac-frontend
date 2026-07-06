@@ -1,0 +1,7 @@
+<%- include('partials/head') %>
+<h1><%= heading %></h1>
+<div class="notice"<% if (noticeId) { %> id="<%= noticeId %>"<% } %>><%= notice %></div>
+<% if (links && links.length) { %>
+  <p><% links.forEach(function(l){ %><a href="<%= l.href %>"<% if (l.id) { %> id="<%= l.id %>"<% } %>><%= l.text %></a>&nbsp; <% }) %></p>
+<% } %>
+<%- include('partials/foot') %>

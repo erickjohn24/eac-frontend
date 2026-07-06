@@ -1,0 +1,25 @@
+<%- include('partials/top') %>
+<h1>Workplace registration</h1>
+<form id="osha-form" method="post" action="/osha/workplace/register">
+  <label for="tin">Company TIN</label>
+  <input type="text" id="tin" name="tin" required>
+
+  <label for="companyName">Company name</label>
+  <input type="text" id="companyName" name="companyName" required>
+
+  <label for="workplaceAddress">Workplace address</label>
+  <input type="text" id="workplaceAddress" name="workplaceAddress">
+
+  <label for="employeeCount">Number of employees</label>
+  <input type="text" id="employeeCount" name="employeeCount">
+
+  <label for="riskCategory">Risk category</label>
+  <select id="riskCategory" name="riskCategory">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+
+  <button type="submit">Submit registration</button>
+</form>
+<%- include('partials/bottom') %>

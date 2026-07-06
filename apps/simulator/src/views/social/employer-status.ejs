@@ -1,0 +1,13 @@
+<%- include('../partials/head') %>
+<h1><%= heading %></h1>
+<p class="kv"><b>Company:</b> <%= row.company_name %></p>
+<div id="<%= statusId %>" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'processing') { %>
+  <p>Your employer registration is being processed.</p>
+<% } else if (row.status === 'registered') { %>
+  <p class="notice">Employer registered successfully.</p>
+  <p class="kv"><b>Registration number:</b> <span id="<%= numberId %>"><%= row.reg_number %></span></p>
+  <p><a id="<%= certId %>" href="<%= certHref %>">Download registration certificate (PDF)</a></p>
+<% } %>
+<%- include('../partials/foot') %>

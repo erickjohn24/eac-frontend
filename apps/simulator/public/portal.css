@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background: #e8edf2;
+  color: #222;
+}
+.portal-header {
+  background: #1a3e6e;
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #f0b429;
+}
+.portal-header .brand { font-weight: bold; font-size: 16px; }
+.portal-header nav .user-email { font-size: 12px; background: #2c5590; padding: 4px 10px; border-radius: 3px; }
+main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+.card { background: #fff; border: 1px solid #c6cfd8; border-radius: 3px; padding: 24px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+h1 { font-size: 20px; color: #1a3e6e; margin-top: 0; border-bottom: 1px solid #dde3ea; padding-bottom: 8px; }
+h2 { font-size: 16px; color: #1a3e6e; }
+label { display: block; margin: 12px 0 4px; font-weight: bold; font-size: 13px; }
+input[type=text], input[type=email], input[type=password], input[type=number], select, textarea {
+  width: 100%; max-width: 420px; padding: 6px 8px; border: 1px solid #9daebd; border-radius: 2px; font: inherit;
+}
+input[readonly] { background: #eef2f6; }
+button, .btn {
+  margin-top: 16px; background: #1a3e6e; color: #fff; border: 0; padding: 8px 20px;
+  border-radius: 3px; font: inherit; cursor: pointer;
+}
+button.secondary { background: #5a6b7c; margin-top: 8px; }
+.error-banner { background: #fbeaea; border: 1px solid #c0392b; color: #922; padding: 10px 14px; margin-bottom: 16px; border-radius: 3px; }
+.notice { background: #eaf6ec; border: 1px solid #2e7d32; color: #205723; padding: 10px 14px; margin-bottom: 16px; border-radius: 3px; }
+.status-line { padding: 10px 14px; background: #f4f7fa; border: 1px solid #c6cfd8; margin: 12px 0; border-radius: 3px; }
+.kv { margin: 6px 0; }
+.kv b { display: inline-block; min-width: 180px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+td, th { border: 1px solid #c6cfd8; padding: 6px 10px; text-align: left; font-size: 13px; }
+fieldset { border: 1px solid #c6cfd8; margin: 14px 0; padding: 10px 14px; }
+legend { font-weight: bold; color: #1a3e6e; padding: 0 6px; }
+ul.portal-links li { margin: 6px 0; }
+a { color: #1a3e6e; }
+.portal-footer { text-align: center; font-size: 11px; color: #667; padding: 20px; }
+.captcha-box { background: #f4f7fa; border: 1px dashed #9daebd; padding: 10px 14px; margin: 14px 0; max-width: 420px; }

@@ -1,0 +1,15 @@
+<%- include('partials/top') %>
+<h1>Bill <%= bill.control_number %></h1>
+<div id="bill-status" class="status-line" data-status="<%= bill.status %>">
+  Status: <b><%= bill.status %></b>
+</div>
+<div class="kv"><b>Control number</b> <%= bill.control_number %></div>
+<div class="kv"><b>Amount</b> <span id="bill-amount"><%= bill.amount_tzs %></span> TZS</div>
+<div class="kv"><b>Payee</b> <span id="bill-payee"><%= bill.payee %></span></div>
+<div class="kv"><b>Description</b> <%= bill.description %></div>
+<% if (bill.status === 'paid') { %>
+  <div class="kv"><b>Receipt number</b> <%= bill.receipt_no %></div>
+<% } else { %>
+  <p>Pay via mobile money or bank using the control number above.</p>
+<% } %>
+<%- include('partials/bottom') %>

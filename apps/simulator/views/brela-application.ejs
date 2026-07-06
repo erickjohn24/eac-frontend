@@ -1,0 +1,21 @@
+<%- include('partials/top') %>
+<h1>Incorporation application APP-<%= a.id %></h1>
+<div id="application-status" class="status-line" data-status="<%= a.status %>">
+  Status: <b><%= a.status %></b>
+</div>
+<div class="kv"><b>Company name</b> <%= a.company_name %></div>
+<div class="kv"><b>Reservation number</b> <%= a.reservation_number %></div>
+<% if (a.status === 'pending_payment') { %>
+  <p>Please pay the GePG bill to proceed. Control number:
+    <span id="control-number"><%= a.control_number %></span></p>
+  <p><a href="/gepg/bill/<%= a.control_number %>">View bill on GePG</a></p>
+<% } else if (a.status === 'under_review') { %>
+  <p>Payment received. Your application is under review by a registrar.</p>
+<% } else if (a.status === 'approved') { %>
+  <div class="kv"><b>Incorporation number</b> <span id="incorporation-number"><%= a.incorporation_number %></span></div>
+  <div class="kv"><b>Incorporation date</b> <span id="incorporation-date"><%= a.incorporation_date %></span></div>
+  <p><a id="certificate-download" href="/brela-ors/applications/<%= a.id %>/certificate.pdf">Download certificate of incorporation (PDF)</a></p>
+<% } else if (a.status === 'queried') { %>
+  <p>The registrar has raised a query on your application.</p>
+<% } %>
+<%- include('partials/bottom') %>

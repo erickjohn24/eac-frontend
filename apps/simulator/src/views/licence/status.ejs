@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+<h1>Business licence application</h1>
+<p class="kv"><b>Business:</b> <%= row.business_name %></p>
+<div id="licence-status" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'pending_payment') { %>
+  <p class="kv"><b>GePG control number:</b> <span id="control-number"><%= row.control_number %></span></p>
+  <p>Pay the control number via GePG to submit the licence application.</p>
+<% } else if (row.status === 'processing') { %>
+  <p>Payment received. Your licence application is being processed.</p>
+<% } else if (row.status === 'issued') { %>
+  <p class="notice">Business licence issued.</p>
+  <p class="kv"><b>Licence number:</b> <span id="licence-number"><%= row.licence_number %></span></p>
+  <p><a id="licence-certificate" href="<%= certHref %>">Download business licence (PDF)</a></p>
+<% } %>
+<%- include('../partials/foot') %>

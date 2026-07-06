@@ -1,0 +1,5 @@
+<%- include('partials/top') %>
+<h1><%= heading %></h1>
+<div class="notice"<% if (noticeId) { %> id="<%= noticeId %>"<% } %>><%= message %></div>
+<p><a href="/brela-ors/login">Go to login</a></p>
+<%- include('partials/bottom') %>

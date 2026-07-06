@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+<h1>Company incorporation</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="incorporation-form" method="post" action="/brela-ors/incorporation" enctype="multipart/form-data">
+  <label for="reservationNumber">Approved name reservation number</label>
+  <input id="reservationNumber" name="reservationNumber" value="<%= reservationNumber %>" placeholder="RSV-..." />
+
+  <label for="shareCapital">Share capital (TZS)</label>
+  <input id="shareCapital" name="shareCapital" />
+
+  <label for="totalShares">Total shares</label>
+  <input id="totalShares" name="totalShares" />
+
+  <label for="physicalAddress">Physical address</label>
+  <input id="physicalAddress" name="physicalAddress" />
+
+  <label for="region">Region</label>
+  <input id="region" name="region" />
+
+  <label for="district">District</label>
+  <input id="district" name="district" />
+
+  <h2>Directors</h2>
+  <div class="field-group">
+    <label>Director full name</label>
+    <input name="director_fullName[]" />
+    <label>Director NIN</label>
+    <input name="director_nin[]" />
+    <label>Director TIN</label>
+    <input name="director_tin[]" />
+  </div>
+
+  <h2>Shareholders</h2>
+  <div class="field-group">
+    <label>Shareholder full name</label>
+    <input name="shareholder_fullName[]" />
+    <label>Shareholder NIN</label>
+    <input name="shareholder_nin[]" />
+    <label>Shareholder shares</label>
+    <input name="shareholder_shares[]" />
+  </div>
+
+  <label for="memarts">Memorandum &amp; Articles (PDF)</label>
+  <input id="memarts" type="file" name="memarts" accept="application/pdf" />
+
+  <label for="declaration">Declaration of compliance (PDF)</label>
+  <input id="declaration" type="file" name="declaration" accept="application/pdf" />
+
+  <label><input type="checkbox" name="declarationConfirmed" value="yes" style="width:auto" /> I confirm the declaration of compliance</label>
+
+  <button type="submit">Submit incorporation (TZS 250,000)</button>
+</form>
+<%- include('../partials/foot') %>

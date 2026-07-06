@@ -1,0 +1,15 @@
+<%- include('partials/top') %>
+<h1>TIN application TINAPP-<%= t.id %></h1>
+<div id="tin-status" class="status-line" data-status="<%= t.status %>">
+  Status: <b><%= t.status %></b>
+</div>
+<div class="kv"><b>Company name</b> <%= t.company_name %></div>
+<% if (t.status === 'biometrics_pending') { %>
+  <p>Your application requires biometric verification of the authorised representative.</p>
+  <div class="kv"><b>Appointment reference</b> <span id="appointment-ref"><%= t.appointment_ref %></span></div>
+  <div class="kv"><b>Location</b> <span id="appointment-location">TRA Ilala Tax Region Office</span></div>
+<% } else if (t.status === 'issued') { %>
+  <div class="kv"><b>Company TIN</b> <span id="company-tin"><%= t.tin %></span></div>
+  <p><a id="tin-certificate" href="/tra/tin/applications/<%= t.id %>/certificate.pdf">Download TIN certificate (PDF)</a></p>
+<% } %>
+<%- include('partials/bottom') %>

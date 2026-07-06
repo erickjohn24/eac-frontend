@@ -1,0 +1,21 @@
+<%- include('partials/top') %>
+<h1>Employer registration</h1>
+<form id="<%= key %>-form" method="post" action="<%= base %>/employer/register">
+  <label for="tin">Company TIN</label>
+  <input type="text" id="tin" name="tin" required>
+
+  <label for="companyName">Company name</label>
+  <input type="text" id="companyName" name="companyName" required>
+
+  <label for="incorporationNumber">Incorporation number</label>
+  <input type="text" id="incorporationNumber" name="incorporationNumber">
+
+  <label for="employeeCount">Number of employees</label>
+  <input type="text" id="employeeCount" name="employeeCount">
+
+  <label for="contactEmail">Contact email</label>
+  <input type="email" id="contactEmail" name="contactEmail">
+
+  <button type="submit">Submit registration</button>
+</form>
+<%- include('partials/bottom') %>

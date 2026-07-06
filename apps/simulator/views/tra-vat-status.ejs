@@ -1,0 +1,12 @@
+<%- include('partials/top') %>
+<h1>VAT application <%= v.id %></h1>
+<div id="vat-status" class="status-line" data-status="<%= v.status %>">
+  Status: <b><%= v.status %></b>
+</div>
+<div class="kv"><b>TIN</b> <%= v.tin %></div>
+<% if (v.status === 'verification_pending') { %>
+  <p>A TRA officer will visit your premises for physical verification.</p>
+<% } else if (v.status === 'registered') { %>
+  <div class="kv"><b>VAT Registration Number</b> <span id="vrn"><%= v.vrn %></span></div>
+<% } %>
+<%- include('partials/bottom') %>

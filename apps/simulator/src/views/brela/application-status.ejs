@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+<h1>Incorporation application status</h1>
+<p class="kv"><b>Company:</b> <%= row.company_name %></p>
+<div id="application-status" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'pending_payment') { %>
+  <p class="kv"><b>GePG control number:</b> <span id="control-number"><%= row.control_number %></span></p>
+  <p>Pay the control number via GePG to submit the application for review.</p>
+<% } else if (row.status === 'under_review') { %>
+  <p>Payment received. Your application is under review by BRELA.</p>
+<% } else if (row.status === 'approved') { %>
+  <p class="notice">Company incorporated successfully.</p>
+  <p class="kv"><b>Incorporation number:</b> <span id="incorporation-number"><%= row.incorporation_number %></span></p>
+  <p class="kv"><b>Incorporation date:</b> <span id="incorporation-date"><%= row.incorporation_date %></span></p>
+  <p><a id="certificate-download" href="/brela-ors/applications/<%= row.id %>/certificate.pdf">Download certificate of incorporation (PDF)</a></p>
+<% } else if (row.status === 'queried') { %>
+  <p class="error-banner">This application has been queried by BRELA.</p>
+<% } %>
+<%- include('../partials/foot') %>

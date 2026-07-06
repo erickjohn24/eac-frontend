@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+<h1>Government Electronic Payment Gateway</h1>
+<% if (!row) { %>
+  <div class="error-banner">No bill found for control number <%= controlNumber %>.</div>
+<% } else { %>
+  <table class="bill">
+    <tr><td>Control number</td><td><%= row.control_number %></td></tr>
+    <tr><td>Payee</td><td><span id="bill-payee"><%= row.payee %></span></td></tr>
+    <tr><td>Description</td><td><%= row.description %></td></tr>
+    <tr><td>Amount (TZS)</td><td><span id="bill-amount"><%= row.amount_tzs %></span></td></tr>
+    <tr><td>Status</td><td><span id="bill-status" data-status="<%= row.status %>"><%= row.status %></span></td></tr>
+    <% if (row.status === 'paid') { %><tr><td>Receipt</td><td><%= row.receipt_no %></td></tr><% } %>
+  </table>
+<% } %>
+<%- include('../partials/foot') %>

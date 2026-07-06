@@ -1,0 +1,18 @@
+<%- include('partials/top') %>
+<h1>Licence application LIC-<%= l.id %></h1>
+<div id="licence-status" class="status-line" data-status="<%= l.status %>">
+  Status: <b><%= l.status %></b>
+</div>
+<div class="kv"><b>Business name</b> <%= l.business_name %></div>
+<div class="kv"><b>Activity code</b> <%= l.activity_code %></div>
+<% if (l.status === 'pending_payment') { %>
+  <p>Please pay the GePG bill to proceed. Control number:
+    <span id="control-number"><%= l.control_number %></span></p>
+  <p><a href="/gepg/bill/<%= l.control_number %>">View bill on GePG</a></p>
+<% } else if (l.status === 'processing') { %>
+  <p>Payment received. Your licence application is being processed.</p>
+<% } else if (l.status === 'issued') { %>
+  <div class="kv"><b>Licence number</b> <span id="licence-number"><%= l.licence_number %></span></div>
+  <p><a id="licence-certificate" href="<%= base %>/licence/applications/<%= l.id %>/certificate.pdf">Download licence (PDF)</a></p>
+<% } %>
+<%- include('partials/bottom') %>

@@ -1,0 +1,11 @@
+<%- include('../partials/head') %>
+<h1>Login</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="login-form" method="post" action="/tra/login">
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" value="<%= email %>" />
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" />
+  <button type="submit">Login</button>
+</form>
+<%- include('../partials/foot') %>

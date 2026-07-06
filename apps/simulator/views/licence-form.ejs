@@ -1,0 +1,32 @@
+<%- include('partials/top') %>
+<h1>Business licence application</h1>
+<form id="licence-form" method="post" action="<%= base %>/licence/apply" enctype="multipart/form-data">
+  <label for="tin">Company TIN</label>
+  <input type="text" id="tin" name="tin" required>
+
+  <label for="incorporationNumber">Incorporation number</label>
+  <input type="text" id="incorporationNumber" name="incorporationNumber">
+
+  <label for="businessName">Business name</label>
+  <input type="text" id="businessName" name="businessName" required>
+
+  <label for="activityCode">Business activity</label>
+  <select id="activityCode" name="activityCode">
+    <option value="GEN-001">General trade</option>
+    <option value="ICT-001">Information technology services</option>
+    <option value="CON-001">Consultancy services</option>
+    <option value="MAN-001">Manufacturing</option>
+  </select>
+
+  <label for="premisesAddress">Premises address</label>
+  <input type="text" id="premisesAddress" name="premisesAddress">
+
+  <label for="leaseAgreement">Lease agreement (PDF)</label>
+  <input type="file" id="leaseAgreement" name="leaseAgreement" accept="application/pdf">
+
+  <label for="tinCertificate">TIN certificate (PDF)</label>
+  <input type="file" id="tinCertificate" name="tinCertificate" accept="application/pdf">
+
+  <button type="submit">Submit application</button>
+</form>
+<%- include('partials/bottom') %>

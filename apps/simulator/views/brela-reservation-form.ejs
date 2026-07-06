@@ -1,0 +1,19 @@
+<%- include('partials/top') %>
+<h1>Name reservation application</h1>
+<form id="reservation-form" method="post" action="/brela-ors/name-reservation">
+  <label for="proposedName">Proposed name</label>
+  <input type="text" id="proposedName" name="proposedName" required>
+
+  <label for="entityType">Entity type</label>
+  <select id="entityType" name="entityType">
+    <option value="private_company">Private company limited by shares</option>
+    <option value="public_company">Public company</option>
+    <option value="sole_proprietor">Sole proprietor (business name)</option>
+  </select>
+
+  <label for="natureOfBusiness">Nature of business</label>
+  <textarea id="natureOfBusiness" name="natureOfBusiness" rows="4"></textarea>
+
+  <button type="submit">Submit reservation</button>
+</form>
+<%- include('partials/bottom') %>

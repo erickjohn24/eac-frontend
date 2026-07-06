@@ -1,0 +1,32 @@
+<%- include('partials/top') %>
+<h1>Create an account</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="register-form" method="post" action="/brela-ors/register">
+  <label for="nin">National Identification Number (NIN)</label>
+  <input type="text" id="nin" name="nin" maxlength="20" value="<%= values.nin || '' %>" required>
+  <div>
+    <button id="load-nida" type="submit" class="secondary"
+            formaction="/brela-ors/nida-lookup" formmethod="post" formnovalidate>Load from NIDA</button>
+  </div>
+
+  <label for="fullName">Full name (from NIDA)</label>
+  <input type="text" id="fullName" name="fullName" value="<%= fullName || '' %>" <% if (fullName) { %>readonly<% } %>>
+
+  <label for="email">Email address</label>
+  <input type="email" id="email" name="email" value="<%= values.email || '' %>">
+
+  <label for="phone">Phone number</label>
+  <input type="text" id="phone" name="phone" value="<%= values.phone || '' %>">
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password">
+
+  <div class="captcha-box">
+    <label id="captcha-question" for="captcha"><%= captcha.question %></label>
+    <input type="text" id="captcha" name="captcha" autocomplete="off">
+    <input type="hidden" name="captchaToken" value="<%= captcha.token %>">
+  </div>
+
+  <button type="submit">Register</button>
+</form>
+<%- include('partials/bottom') %>

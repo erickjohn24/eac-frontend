@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<h1>Name reservation</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="reservation-form" method="post" action="/brela-ors/name-reservation">
+  <label for="proposedName">Proposed company name</label>
+  <input id="proposedName" name="proposedName" value="<%= proposedName %>" />
+
+  <label for="entityType">Entity type</label>
+  <select id="entityType" name="entityType">
+    <option value="private_company">Private company limited by shares</option>
+    <option value="public_company">Public company limited by shares</option>
+    <option value="company_limited_by_guarantee">Company limited by guarantee</option>
+  </select>
+
+  <label for="natureOfBusiness">Nature of business</label>
+  <textarea id="natureOfBusiness" name="natureOfBusiness" rows="3"><%= natureOfBusiness %></textarea>
+
+  <button type="submit">Reserve name (TZS 50,000)</button>
+</form>
+<%- include('../partials/foot') %>

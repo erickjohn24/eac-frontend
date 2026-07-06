@@ -1,0 +1,63 @@
+<%- include('partials/top') %>
+<h1>Company incorporation application</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="incorporation-form" method="post" action="/brela-ors/incorporation" enctype="multipart/form-data">
+  <label for="reservationNumber">Name reservation number</label>
+  <input type="text" id="reservationNumber" name="reservationNumber" required>
+
+  <label for="shareCapital">Share capital (TZS)</label>
+  <input type="text" id="shareCapital" name="shareCapital">
+
+  <label for="totalShares">Total shares</label>
+  <input type="text" id="totalShares" name="totalShares">
+
+  <label for="physicalAddress">Physical address</label>
+  <input type="text" id="physicalAddress" name="physicalAddress">
+
+  <label for="region">Region</label>
+  <input type="text" id="region" name="region">
+
+  <label for="district">District</label>
+  <input type="text" id="district" name="district">
+
+  <fieldset>
+    <legend>Directors</legend>
+    <% for (let i = 0; i < 2; i++) { %>
+      <label>Director full name</label>
+      <input type="text" name="director_fullName[]">
+      <label>Director NIN</label>
+      <input type="text" name="director_nin[]">
+      <label>Director TIN</label>
+      <input type="text" name="director_tin[]">
+    <% } %>
+    <p><small>TINs may be verified via POST /brela-ors/verify-tin.</small></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Shareholders</legend>
+    <% for (let i = 0; i < 2; i++) { %>
+      <label>Shareholder full name</label>
+      <input type="text" name="shareholder_fullName[]">
+      <label>Shareholder NIN</label>
+      <input type="text" name="shareholder_nin[]">
+      <label>Shares held</label>
+      <input type="text" name="shareholder_shares[]">
+    <% } %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Attachments</legend>
+    <label for="memarts">Memorandum &amp; Articles of Association (PDF)</label>
+    <input type="file" id="memarts" name="memarts" accept="application/pdf">
+    <label for="declaration">Declaration of compliance (PDF)</label>
+    <input type="file" id="declaration" name="declaration" accept="application/pdf">
+  </fieldset>
+
+  <label>
+    <input type="checkbox" name="declarationConfirmed" value="yes">
+    I declare the information provided is true and correct.
+  </label>
+
+  <button type="submit">Submit application</button>
+</form>
+<%- include('partials/bottom') %>

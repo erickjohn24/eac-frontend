@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<h1>Company TIN application</h1>
+<p class="kv"><b>Company:</b> <%= row.company_name %></p>
+<div id="tin-status" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'submitted') { %>
+  <p>Your application has been submitted.</p>
+<% } else if (row.status === 'biometrics_pending') { %>
+  <p>A one-time biometric visit by a director is required to finalise the TIN.</p>
+  <p class="kv"><b>Appointment reference:</b> <span id="appointment-ref"><%= row.appointment_ref %></span></p>
+  <p class="kv"><b>Location:</b> <span id="appointment-location"><%= row.appointment_location %></span></p>
+<% } else if (row.status === 'issued') { %>
+  <p class="notice">Company TIN issued.</p>
+  <p class="kv"><b>Company TIN:</b> <span id="company-tin"><%= row.tin %></span></p>
+  <p><a id="tin-certificate" href="/tra/tin/applications/<%= row.id %>/certificate.pdf">Download TIN certificate (PDF)</a></p>
+<% } %>
+<%- include('../partials/foot') %>

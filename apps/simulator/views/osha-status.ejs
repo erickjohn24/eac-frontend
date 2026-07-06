@@ -1,0 +1,15 @@
+<%- include('partials/top') %>
+<h1>Workplace registration <%= o.id %></h1>
+<div id="osha-status" class="status-line" data-status="<%= o.status %>">
+  Status: <b><%= o.status %></b>
+</div>
+<div class="kv"><b>Company name</b> <%= o.company_name %></div>
+<div class="kv"><b>Risk category</b> <%= o.risk_category %></div>
+<% if (o.status === 'inspection_pending') { %>
+  <p>An OSHA inspector will visit the workplace.</p>
+  <div class="kv"><b>Inspection reference</b> <span id="inspection-ref"><%= o.inspection_ref %></span></div>
+<% } else if (o.status === 'registered') { %>
+  <div class="kv"><b>OSHA registration number</b> <span id="osha-number"><%= o.osha_number %></span></div>
+  <p><a id="osha-certificate" href="/osha/workplace/applications/<%= o.id %>/certificate.pdf">Download certificate (PDF)</a></p>
+<% } %>
+<%- include('partials/bottom') %>

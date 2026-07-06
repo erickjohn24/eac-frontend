@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+<h1>Create your ORS account</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="register-form" method="post" action="/brela-ors/register">
+  <label for="nin">National Identification Number (NIN)</label>
+  <input id="nin" name="nin" value="<%= nin %>" maxlength="20" placeholder="20 digits" />
+  <button id="load-nida" type="submit" formaction="/brela-ors/nida-lookup" formmethod="post" formnovalidate class="secondary">Load from NIDA</button>
+
+  <label for="fullName">Full name (from NIDA)</label>
+  <input id="fullName" name="fullName" value="<%= fullName %>" readonly />
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" value="<%= email %>" />
+
+  <label for="phone">Phone</label>
+  <input id="phone" name="phone" value="<%= phone %>" />
+
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" />
+
+  <label id="captcha-question"><%= captchaQuestion %></label>
+  <input name="captcha" placeholder="Answer" />
+  <input type="hidden" name="captchaToken" value="<%= captchaToken %>" />
+
+  <button type="submit">Register</button>
+</form>
+<%- include('../partials/foot') %>

@@ -1,0 +1,21 @@
+<%- include('partials/top') %>
+<h1>Name reservation <%= r.reservation_number %></h1>
+<div id="reservation-status" class="status-line" data-status="<%= r.status %>">
+  Status: <b><%= r.status %></b>
+</div>
+<div class="kv"><b>Proposed name</b> <%= r.proposed_name %></div>
+<div class="kv"><b>Entity type</b> <%= r.entity_type %></div>
+<% if (r.status === 'pending_payment') { %>
+  <p>Please pay the GePG bill to proceed. Control number:
+    <span id="control-number"><%= r.control_number %></span></p>
+  <p><a href="/gepg/bill/<%= r.control_number %>">View bill on GePG</a></p>
+<% } else if (r.status === 'processing') { %>
+  <p>Payment received. Your application is being processed by a registrar.</p>
+<% } else if (r.status === 'reserved') { %>
+  <p>Your name has been reserved. Reservation number:
+    <span id="reservation-number"><%= r.reservation_number %></span></p>
+  <p><a id="reservation-certificate" href="/brela-ors/reservations/<%= r.id %>/certificate.pdf">Download reservation certificate (PDF)</a></p>
+<% } else if (r.status === 'rejected') { %>
+  <p>Your name reservation was rejected.</p>
+<% } %>
+<%- include('partials/bottom') %>

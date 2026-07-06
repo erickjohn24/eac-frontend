@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+<h1>Company TIN registration</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="company-tin-form" method="post" action="/tra/tin/company">
+  <label for="incorporationNumber">Certificate of incorporation number</label>
+  <input id="incorporationNumber" name="incorporationNumber" value="<%= incorporationNumber %>" />
+
+  <label for="companyName">Company name</label>
+  <input id="companyName" name="companyName" value="<%= companyName %>" />
+
+  <label for="physicalAddress">Physical address</label>
+  <input id="physicalAddress" name="physicalAddress" />
+
+  <label for="region">Region</label>
+  <input id="region" name="region" />
+
+  <label for="businessSector">Business sector (ISIC)</label>
+  <select id="businessSector" name="businessSector">
+    <option value="6201">6201 - Computer programming activities</option>
+    <option value="6202">6202 - Computer consultancy</option>
+    <option value="4711">4711 - Retail trade</option>
+    <option value="7020">7020 - Management consultancy</option>
+    <option value="1071">1071 - Manufacture of bakery products</option>
+  </select>
+
+  <h2>Authorised director representative</h2>
+  <label for="repFullName">Full name</label>
+  <input id="repFullName" name="repFullName" />
+  <label for="repNin">NIN</label>
+  <input id="repNin" name="repNin" />
+  <label for="repTin">Individual TIN</label>
+  <input id="repTin" name="repTin" />
+
+  <button type="submit">Submit TIN application</button>
+</form>
+<%- include('../partials/foot') %>

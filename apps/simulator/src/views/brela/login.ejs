@@ -1,0 +1,12 @@
+<%- include('../partials/head') %>
+<h1>Login</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="login-form" method="post" action="/brela-ors/login">
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" value="<%= email %>" />
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" />
+  <button type="submit">Login</button>
+</form>
+<p><a id="register-link" href="/brela-ors/register">Create an account</a></p>
+<%- include('../partials/foot') %>

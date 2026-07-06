@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/portal.css">
+</head>
+<body>
+  <header class="portal-header">
+    <div class="brand"><%= portal %></div>
+    <nav>
+      <% if (userEmail) { %><span class="user-email"><%= userEmail %></span><% } %>
+    </nav>
+  </header>
+  <main>
+    <div class="card">

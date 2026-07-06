@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+<h1>VAT application</h1>
+<p class="kv"><b>TIN:</b> <%= row.tin %></p>
+<div id="vat-status" data-status="<%= row.status %>" class="status-badge"><%= row.status %></div>
+
+<% if (row.status === 'submitted') { %>
+  <p>Your application has been submitted.</p>
+<% } else if (row.status === 'verification_pending') { %>
+  <p>TRA will perform a physical verification visit before activation.</p>
+<% } else if (row.status === 'registered') { %>
+  <p class="notice">VAT registration complete.</p>
+  <p class="kv"><b>VAT registration number (VRN):</b> <span id="vrn"><%= row.vrn %></span></p>
+  <p><a id="vat-certificate" href="/tra/vat/applications/<%= row.id %>/certificate.pdf">Download VAT certificate (PDF)</a></p>
+<% } %>
+<%- include('../partials/foot') %>

@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+<h1>OSHA workplace registration</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="osha-form" method="post" action="/osha/workplace/register">
+  <label for="tin">Company TIN</label>
+  <input id="tin" name="tin" value="<%= tin %>" />
+  <label for="companyName">Company name</label>
+  <input id="companyName" name="companyName" value="<%= companyName %>" />
+  <label for="workplaceAddress">Workplace address</label>
+  <input id="workplaceAddress" name="workplaceAddress" />
+  <label for="employeeCount">Number of employees</label>
+  <input id="employeeCount" name="employeeCount" />
+  <label for="riskCategory">Risk category</label>
+  <select id="riskCategory" name="riskCategory">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <button type="submit">Register workplace</button>
+</form>
+<%- include('../partials/foot') %>

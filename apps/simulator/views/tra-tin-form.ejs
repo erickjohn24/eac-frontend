@@ -1,0 +1,37 @@
+<%- include('partials/top') %>
+<h1>Company TIN application</h1>
+<form id="company-tin-form" method="post" action="/tra/tin/company">
+  <label for="incorporationNumber">Incorporation number</label>
+  <input type="text" id="incorporationNumber" name="incorporationNumber" required>
+
+  <label for="companyName">Company name</label>
+  <input type="text" id="companyName" name="companyName" required>
+
+  <label for="physicalAddress">Physical address</label>
+  <input type="text" id="physicalAddress" name="physicalAddress">
+
+  <label for="region">Region</label>
+  <input type="text" id="region" name="region">
+
+  <label for="businessSector">Business sector (ISIC)</label>
+  <select id="businessSector" name="businessSector">
+    <option value="0111">0111 — Growing of cereals</option>
+    <option value="4711">4711 — Retail sale in non-specialised stores</option>
+    <option value="6201">6201 — Computer programming activities</option>
+    <option value="6202">6202 — Computer consultancy</option>
+    <option value="6820">6820 — Real estate activities</option>
+  </select>
+
+  <fieldset>
+    <legend>Authorised representative (director)</legend>
+    <label for="repFullName">Full name</label>
+    <input type="text" id="repFullName" name="repFullName">
+    <label for="repNin">NIN</label>
+    <input type="text" id="repNin" name="repNin">
+    <label for="repTin">Personal TIN</label>
+    <input type="text" id="repTin" name="repTin">
+  </fieldset>
+
+  <button type="submit">Submit application</button>
+</form>
+<%- include('partials/bottom') %>

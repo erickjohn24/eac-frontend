@@ -1,0 +1,13 @@
+<%- include('../partials/head') %>
+<h1>VAT registration</h1>
+<% if (error) { %><div class="error-banner"><%= error %></div><% } %>
+<form id="vat-form" method="post" action="/tra/vat/apply">
+  <label for="tin">Company TIN</label>
+  <input id="tin" name="tin" value="<%= tin %>" />
+  <label for="expectedTurnover">Expected annual turnover (TZS)</label>
+  <input id="expectedTurnover" name="expectedTurnover" />
+  <label for="businessDescription">Business description</label>
+  <textarea id="businessDescription" name="businessDescription" rows="3"></textarea>
+  <button type="submit">Submit VAT application</button>
+</form>
+<%- include('../partials/foot') %>

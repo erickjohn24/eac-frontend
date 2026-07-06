@@ -1,0 +1,14 @@
+<%- include('partials/top') %>
+<h1>Employer registration <%= e.id %></h1>
+<div id="<%= key %>-status" class="status-line" data-status="<%= e.status %>">
+  Status: <b><%= e.status %></b>
+</div>
+<div class="kv"><b>Company name</b> <%= e.company_name %></div>
+<div class="kv"><b>TIN</b> <%= e.tin %></div>
+<% if (e.status === 'processing') { %>
+  <p>Your employer registration is being processed.</p>
+<% } else if (e.status === 'registered') { %>
+  <div class="kv"><b>Registration number</b> <span id="<%= key %>-number"><%= e.reg_number %></span></div>
+  <p><a id="<%= key %>-certificate" href="<%= base %>/employer/applications/<%= e.id %>/certificate.pdf">Download certificate (PDF)</a></p>
+<% } %>
+<%- include('partials/bottom') %>

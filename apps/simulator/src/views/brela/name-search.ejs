@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<h1>Company name search</h1>
+<form id="name-search-form" method="get" action="/brela-ors/name-search">
+  <label for="q">Proposed name</label>
+  <input id="q" name="q" value="<%= q %>" />
+  <button type="submit">Search</button>
+</form>
+<% if (q) { %>
+  <div id="search-result" data-status="<%= status %>">
+    <% if (status === 'available') { %>
+      <p class="notice">The name "<%= q %>" is <strong>available</strong>.</p>
+    <% } else { %>
+      <p class="error-banner">The name "<%= q %>" is <strong>taken</strong>.</p>
+    <% } %>
+  </div>
+<% } %>
+<%- include('../partials/foot') %>
