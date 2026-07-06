@@ -1,0 +1,28 @@
+{
+  "name": "tz-compliance",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Agentic AI platform automating business registration and continuous compliance in Tanzania",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "pnpm --filter e2e test",
+    "db:migrate": "pnpm --filter @tz/db migrate",
+    "db:seed": "pnpm --filter @tz/db seed",
+    "db:reset": "pnpm --filter @tz/db reset",
+    "demo": "node scripts/demo.mjs",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,mjs}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.5.0",
+    "typescript": "^5.7.3"
+  }
+}

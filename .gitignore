@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.next/
+.turbo/
+.expo/
+coverage/
+storage/
+*.log
+.env
+.env.local
+*.tsbuildinfo
+apps/simulator/data/*.sqlite
+e2e/test-results/
+e2e/playwright-report/
+.DS_Store
