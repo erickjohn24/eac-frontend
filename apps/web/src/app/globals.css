@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   tz-compliance design system — "Tanzanite fintech"
+   Dark-first, warm-ivory light. Named after the gemstone found only in
+   Tanzania: a violet-blue that shifts to teal. Editorial serif display
+   (Fraunces) over a precise UI sans (Inter Tight).
+--------------------------------------------------------------------------- */
+
+@theme {
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #08080d;
+  --color-bg-2: #0d0d16;
+  --color-panel: #12121d;
+  --color-panel-2: #171725;
+  --color-elevated: #1c1c2c;
+  --color-hairline: #262636;
+
+  --color-fg: #ececf5;
+  --color-fg-muted: #9a9ab4;
+  --color-fg-faint: #6a6a82;
+
+  --color-tz-500: #6366f1;
+  --color-tz-400: #7c6bf5;
+  --color-tz-300: #9a8bff;
+  --color-teal-400: #22d3ee;
+  --color-teal-500: #06b6d4;
+  --color-gold: #e4b458;
+
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #fb7185;
+
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 30px rgba(0, 0, 0, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(124, 107, 245, 0.25), 0 12px 48px rgba(79, 70, 229, 0.28);
+
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Aceternity animations */
+  --animate-aurora: aurora 60s linear infinite;
+  --animate-spotlight: spotlight 2s ease 0.6s 1 forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-meteor: meteor 5s linear infinite;
+}
+
+@keyframes aurora {
+  0% { background-position: 50% 50%, 50% 50%; }
+  100% { background-position: 350% 50%, 350% 50%; }
+}
+@keyframes spotlight {
+  0% { opacity: 0; transform: translate(-72%, -62%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+}
+@keyframes shimmer {
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
+}
+@keyframes meteor {
+  0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* Light theme (warm ivory) */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f7f5f0;
+  --color-bg-2: #f1eee7;
+  --color-panel: #ffffff;
+  --color-panel-2: #faf9f5;
+  --color-elevated: #ffffff;
+  --color-hairline: #e6e1d6;
+  --color-fg: #1a1826;
+  --color-fg-muted: #5b5768;
+  --color-fg-faint: #8c8798;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+    letter-spacing: -0.011em;
+    min-height: 100dvh;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-tz-400) 40%, transparent);
+    color: #fff;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-hairline);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+/* ------------------------------- utilities ------------------------------- */
+
+.tz-gradient-text {
+  background: linear-gradient(110deg, var(--color-tz-300), var(--color-tz-400) 35%, var(--color-teal-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tz-gradient {
+  background: linear-gradient(135deg, var(--color-tz-400), var(--color-tz-500) 45%, var(--color-teal-500));
+}
+
+.tz-ring {
+  box-shadow: var(--shadow-glow);
+}
+
+.glass {
+  background: color-mix(in oklab, var(--color-panel) 82%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--color-hairline);
+}
+
+.card {
+  background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.hairline {
+  border-color: var(--color-hairline);
+}
+
+/* Aurora backdrop — soft moving tanzanite light */
+.aurora {
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 80vh;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: 0.5;
+  background:
+    radial-gradient(40% 50% at 20% 30%, rgba(124, 107, 245, 0.55), transparent 70%),
+    radial-gradient(35% 45% at 75% 25%, rgba(34, 211, 238, 0.4), transparent 70%),
+    radial-gradient(30% 40% at 55% 60%, rgba(99, 102, 241, 0.45), transparent 70%);
+  animation: aurora-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(0, 3%, 0) scale(1.08); }
+}
+
+/* Kanga-inspired hairline motif for dividers / empty states */
+.kanga-rule {
+  height: 6px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-tz-400) 0 10px,
+    transparent 10px 20px
+  );
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  opacity: 0.5;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
