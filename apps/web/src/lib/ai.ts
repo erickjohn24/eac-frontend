@@ -17,7 +17,7 @@ const KEYWORDS: { match: RegExp; codes: string[] }[] = [
   { match: /\b(it |consult|technolog|systems)\b/i, codes: ["6202", "7020"] },
   { match: /\b(shop|retail|store|sell goods|boutique|supermarket)\b/i, codes: ["4711", "4791"] },
   { match: /\b(online|e-?commerce|marketplace)\b/i, codes: ["4791", "6201"] },
-  { match: /\b(restaurant|food|cafe|catering|kitchen)\b/i, codes: ["5610", "1071"] },
+  { match: /\b(restaurant|food|cafe|catering|kitchen|baker(y|ies)|bread)\b/i, codes: ["5610", "1071"] },
   { match: /\b(hotel|lodge|accommodation|guest house)\b/i, codes: ["5510"] },
   { match: /\b(tour|safari|travel|tourism)\b/i, codes: ["7911", "5510"] },
   { match: /\b(transport|logistics|freight|delivery|haulage)\b/i, codes: ["4923"] },

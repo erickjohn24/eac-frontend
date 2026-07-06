@@ -1,0 +1,24 @@
+version: "3.9"
+
+# Local infrastructure for tz-compliance.
+# Only Postgres is required to use the web app; the simulator is for the
+# automation engine (sandbox portal filing).
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tz
+      POSTGRES_PASSWORD: tz
+      POSTGRES_DB: tz_compliance
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tz -d tz_compliance"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+
+volumes:
+  pgdata:
