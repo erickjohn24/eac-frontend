@@ -29,25 +29,20 @@ packages/
 Prerequisites: **Node 22+**, **pnpm 9+** (`corepack enable`), and Postgres 16
 (via Docker below, or your own).
 
+Run each command on its own — don't paste comment text into the shell.
+
 ```bash
 git clone https://github.com/erickjohn24/eac-frontend.git tz-compliance
 cd tz-compliance
 git checkout claude/tanzania-business-registration-app-e4rwl7
-
 pnpm install
-
-# 1) Database — pick ONE:
-docker compose up -d postgres          # a) Docker (recommended, any OS)
-./scripts/dev-db.sh                    # b) native Postgres on Linux (uses sudo)
-# c) your own Postgres: create db tz_compliance for user tz/tz on :5432
-#    (or set DATABASE_URL in .env to your connection string)
-
-# 2) Apply migrations
+docker compose up -d postgres
 pnpm db:migrate
-
-# 3) Run the web app
 pnpm --filter @tz/web dev
 ```
+
+No Docker? Use `./scripts/dev-db.sh` (Linux, uses sudo), or point
+`DATABASE_URL` in `.env` at any Postgres 16 with a `tz_compliance` database.
 
 Open **http://localhost:3000** — the landing page, the AI onboarding wizard
 (`/onboarding`), signing rooms, and the company dashboard all work out of the

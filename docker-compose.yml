@@ -1,5 +1,3 @@
-version: "3.9"
-
 # Local infrastructure for tz-compliance.
 # Only Postgres is required to use the web app; the simulator is for the
 # automation engine (sandbox portal filing).
