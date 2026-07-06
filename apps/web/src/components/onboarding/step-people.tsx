@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { BadgeCheck, Check, Loader2, Plus, ShieldCheck, Trash2, UserPlus, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { BadgeCheck, Check, Loader2, ShieldCheck, Trash2, UserPlus, X } from "lucide-react";
 import { Field, Input } from "@/components/ui/field";
 import { Chip } from "@/components/ui/chip";
+import { InfoTip } from "@/components/ui/info-tip";
 import { formatTin } from "@tz/shared";
 import {
   newPerson,
@@ -12,11 +12,27 @@ import {
   type OnboardingState,
   type Role,
 } from "@/lib/onboarding-types";
+import { CapTable } from "./cap-table";
 
-const ROLES: { id: Role; label: string; hint: string }[] = [
-  { id: "director", label: "Director", hint: "Runs the company" },
-  { id: "shareholder", label: "Shareholder", hint: "Owns shares" },
-  { id: "signatory", label: "Bank signatory", hint: "Signs on the account" },
+const ROLES: { id: Role; label: string; explain: string }[] = [
+  {
+    id: "director",
+    label: "Director",
+    explain:
+      "Legally responsible for running the company. Directors need a verified National ID and their own TIN before BRELA will register the company.",
+  },
+  {
+    id: "shareholder",
+    label: "Shareholder",
+    explain:
+      "Owns part of the company. Shareholders appear on the register and in the beneficial-ownership filing we prepare for you.",
+  },
+  {
+    id: "signatory",
+    label: "Bank signatory",
+    explain:
+      "Can sign on the company bank account. Signatories attend the one branch appointment to open it.",
+  },
 ];
 
 export function StepPeople({
@@ -51,13 +67,9 @@ export function StepPeople({
     });
   }
 
-  const allocated = state.people
-    .filter((p) => p.roles.includes("shareholder"))
-    .reduce((s, p) => s + p.sharesHeld, 0);
-
   return (
     <div>
-      <p className="max-w-xl text-[1.02rem] leading-relaxed text-fg-muted">
+      <p className="max-w-xl text-[1rem] leading-relaxed text-fg-muted">
         Add each person once. Enter a National ID and we pull their verified details
         straight from NIDA — no retyping names or birth dates. One person can hold several
         roles.
@@ -76,12 +88,18 @@ export function StepPeople({
               <PersonCard
                 person={person}
                 index={i}
+                totalShares={state.totalShares}
                 onUpdate={(p) => update(person.id, p)}
                 onRemove={() => remove(person.id)}
               />
             </motion.div>
           ))}
         </AnimatePresence>
+
+        {/* the cap table lives with the people */}
+        {state.people.some((p) => p.roles.includes("shareholder")) && (
+          <CapTable state={state} onAutoSplit={autoSplit} />
+        )}
 
         <button
           onClick={add}
@@ -91,32 +109,6 @@ export function StepPeople({
           {state.people.length === 0 ? "Add the first director" : "Add another person"}
         </button>
       </div>
-
-      {/* share allocation */}
-      {state.people.some((p) => p.roles.includes("shareholder")) && (
-        <div className="card mt-6 p-5">
-          <div className="flex items-center justify-between">
-            <span className="text-[0.85rem] font-medium">Share allocation</span>
-            <button onClick={autoSplit} className="text-[0.8rem] font-medium text-tz-300 hover:underline">
-              Split evenly
-            </button>
-          </div>
-          <div className="mt-3 h-2 overflow-hidden rounded-full bg-bg-2">
-            <div
-              className={`h-full rounded-full transition-all duration-500 ${
-                allocated === state.totalShares ? "tz-gradient" : "bg-warning"
-              }`}
-              style={{ width: `${Math.min(100, (allocated / (state.totalShares || 1)) * 100)}%` }}
-            />
-          </div>
-          <p className="mt-2 text-[0.8rem] text-fg-muted">
-            {allocated} of {state.totalShares} shares allocated
-            {allocated !== state.totalShares && (
-              <span className="text-warning"> — {Math.abs(state.totalShares - allocated)} {allocated > state.totalShares ? "over" : "left"}</span>
-            )}
-          </p>
-        </div>
-      )}
     </div>
   );
 }
@@ -124,11 +116,13 @@ export function StepPeople({
 function PersonCard({
   person,
   index,
+  totalShares,
   onUpdate,
   onRemove,
 }: {
   person: OnboardingPerson;
   index: number;
+  totalShares: number;
   onUpdate: (p: Partial<OnboardingPerson>) => void;
   onRemove: () => void;
 }) {
@@ -287,13 +281,16 @@ function PersonCard({
 
       {/* roles */}
       <div className="mt-5">
-        <p className="mb-2 text-[0.8rem] font-medium text-fg-muted">Role in the company</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="text-label mb-2">Role in the company</p>
+        <div className="flex flex-wrap items-center gap-2">
           {ROLES.map((r) => (
-            <Chip key={r.id} active={person.roles.includes(r.id)} onClick={() => toggleRole(r.id)}>
-              {person.roles.includes(r.id) && <Check className="size-3.5" />}
-              {r.label}
-            </Chip>
+            <span key={r.id} className="inline-flex items-center gap-1">
+              <Chip active={person.roles.includes(r.id)} onClick={() => toggleRole(r.id)}>
+                {person.roles.includes(r.id) && <Check className="size-3.5" />}
+                {r.label}
+              </Chip>
+              <InfoTip title={r.label}>{r.explain}</InfoTip>
+            </span>
           ))}
         </div>
       </div>
@@ -332,30 +329,38 @@ function PersonCard({
         </div>
       )}
 
-      {/* shares */}
+      {/* shares with live % */}
       {isShareholder && (
-        <div className="mt-4 max-w-[220px]">
+        <div className="mt-4 max-w-[260px]">
           <Field label="Shares held">
-            <Input
-              inputMode="numeric"
-              value={person.sharesHeld}
-              onChange={(e) => onUpdate({ sharesHeld: Number(e.target.value.replace(/\D/g, "")) || 0 })}
-            />
+            <div className="relative">
+              <Input
+                inputMode="numeric"
+                className="tnum pr-16"
+                value={person.sharesHeld}
+                onChange={(e) => onUpdate({ sharesHeld: Number(e.target.value.replace(/\D/g, "")) || 0 })}
+              />
+              <span className="tnum absolute right-3 top-1/2 -translate-y-1/2 text-[0.78rem] font-semibold text-tz-300">
+                {totalShares > 0 ? `${((person.sharesHeld / totalShares) * 100).toFixed(((person.sharesHeld / totalShares) * 100) % 1 === 0 ? 0 : 1)}%` : "—"}
+              </span>
+            </div>
           </Field>
         </div>
       )}
 
       {/* contact (primary only) */}
       {person.isPrimaryContact && (
-        <div className="mt-5 rounded-[var(--radius)] border border-hairline bg-bg-2/40 p-4">
-          <p className="mb-3 text-[0.78rem] font-medium text-fg-muted">
-            Primary contact — where we send codes to approve
+        <div className="mt-5 rounded-[var(--radius)] border border-tz-400/25 bg-tz-500/[0.05] p-4">
+          <p className="text-section text-fg">Where we reach you</p>
+          <p className="text-caption mt-0.5 mb-3">
+            Government portals send one-time codes and payment requests during registration.
+            We relay every one of them here — nothing goes unanswered.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Email">
               <Input type="email" value={person.email} onChange={(e) => onUpdate({ email: e.target.value })} placeholder="you@company.co.tz" />
             </Field>
-            <Field label="Phone">
+            <Field label="Phone (mobile money)">
               <Input value={person.phone} onChange={(e) => onUpdate({ phone: e.target.value })} placeholder="+255 7XX XXX XXX" />
             </Field>
           </div>

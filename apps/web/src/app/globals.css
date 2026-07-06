@@ -2,9 +2,9 @@
 
 /* ---------------------------------------------------------------------------
    tz-compliance design system — "Tanzanite fintech"
-   Dark-first, warm-ivory light. Named after the gemstone found only in
-   Tanzania: a violet-blue that shifts to teal. Editorial serif display
-   (Fraunces) over a precise UI sans (Inter Tight).
+   Dark-first. Editorial serif display (Fraunces) over a precise UI sans
+   (Inter Tight). Violet-blue → teal accent after the gemstone found only
+   in Tanzania.
 --------------------------------------------------------------------------- */
 
 @theme {
@@ -17,10 +17,11 @@
   --color-panel-2: #171725;
   --color-elevated: #1c1c2c;
   --color-hairline: #262636;
+  --color-hairline-2: #32324a;
 
   --color-fg: #ececf5;
-  --color-fg-muted: #9a9ab4;
-  --color-fg-faint: #6a6a82;
+  --color-fg-muted: #a2a2bc;
+  --color-fg-faint: #7e7e98;
 
   --color-tz-500: #6366f1;
   --color-tz-400: #7c6bf5;
@@ -72,20 +73,6 @@
   color-scheme: dark;
 }
 
-/* Light theme (warm ivory) */
-:root[data-theme="light"] {
-  color-scheme: light;
-  --color-bg: #f7f5f0;
-  --color-bg-2: #f1eee7;
-  --color-panel: #ffffff;
-  --color-panel-2: #faf9f5;
-  --color-elevated: #ffffff;
-  --color-hairline: #e6e1d6;
-  --color-fg: #1a1826;
-  --color-fg-muted: #5b5768;
-  --color-fg-faint: #8c8798;
-}
-
 @layer base {
   * {
     border-color: var(--color-hairline);
@@ -120,6 +107,48 @@
   }
 }
 
+/* ------------------------------ type scale ------------------------------- */
+/* A deliberate rhythm: display / title / section / body / label / caption.  */
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 520;
+}
+@utility text-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 540;
+}
+@utility text-section {
+  font-size: 0.95rem;
+  font-weight: 620;
+  letter-spacing: -0.008em;
+}
+@utility text-label {
+  font-size: 0.8rem;
+  font-weight: 560;
+  color: var(--color-fg-muted);
+}
+@utility text-caption {
+  font-size: 0.78rem;
+  color: var(--color-fg-faint);
+}
+@utility text-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 640;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-tz-300);
+}
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
 /* ------------------------------- utilities ------------------------------- */
 
 .tz-gradient-text {
@@ -150,11 +179,28 @@
   box-shadow: var(--shadow-soft);
 }
 
-.hairline {
-  border-color: var(--color-hairline);
+/* Backdrop: layered glows anchored to the content, plus a faint dot grid.
+   Visible but quiet — replaces the imperceptible full-bleed aurora. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(52rem 34rem at 12% -6%, rgba(124, 107, 245, 0.16), transparent 62%),
+    radial-gradient(44rem 30rem at 88% 4%, rgba(34, 211, 238, 0.09), transparent 60%),
+    radial-gradient(60rem 44rem at 50% 118%, rgba(99, 102, 241, 0.10), transparent 64%);
+}
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(236, 236, 245, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(80rem 60rem at 50% 0%, #000 30%, transparent 78%);
 }
 
-/* Aurora backdrop — soft moving tanzanite light */
+/* legacy aurora kept for the landing hero only */
 .aurora {
   position: absolute;
   inset: -40% -10% auto -10%;
@@ -172,19 +218,6 @@
 @keyframes aurora-drift {
   0% { transform: translate3d(0, 0, 0) scale(1); }
   100% { transform: translate3d(0, 3%, 0) scale(1.08); }
-}
-
-/* Kanga-inspired hairline motif for dividers / empty states */
-.kanga-rule {
-  height: 6px;
-  width: 100%;
-  background-image: repeating-linear-gradient(
-    90deg,
-    var(--color-tz-400) 0 10px,
-    transparent 10px 20px
-  );
-  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
-  opacity: 0.5;
 }
 
 .grain::after {

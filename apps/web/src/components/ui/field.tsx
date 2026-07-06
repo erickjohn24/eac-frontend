@@ -9,7 +9,7 @@ export function Field({
   children,
   className,
 }: {
-  label?: string;
+  label?: React.ReactNode;
   hint?: string;
   error?: string;
   children: React.ReactNode;
